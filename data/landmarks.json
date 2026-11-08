@@ -1,0 +1,162 @@
+[
+ {
+  "name": "Rathausplatz",
+  "lat": 52.567111,
+  "lon": 13.367411
+ },
+ {
+  "name": "Nordbahnhof",
+  "lat": 52.542004,
+  "lon": 13.45667
+ },
+ {
+  "name": "Stadtpark Eingang Süd",
+  "lat": 52.501622,
+  "lon": 13.36533
+ },
+ {
+  "name": "Markthalle",
+  "lat": 52.473275,
+  "lon": 13.435511
+ },
+ {
+  "name": "Spreebrücke",
+  "lat": 52.564614,
+  "lon": 13.308919
+ },
+ {
+  "name": "Kulturhaus",
+  "lat": 52.475867,
+  "lon": 13.297742
+ },
+ {
+  "name": "Messehalle",
+  "lat": 52.552188,
+  "lon": 13.442581
+ },
+ {
+  "name": "Zentralbibliothek",
+  "lat": 52.476563,
+  "lon": 13.468935
+ },
+ {
+  "name": "Hafenturm",
+  "lat": 52.567624,
+  "lon": 13.498928
+ },
+ {
+  "name": "Seebad",
+  "lat": 52.472476,
+  "lon": 13.307005
+ },
+ {
+  "name": "Kunsthalle",
+  "lat": 52.547074,
+  "lon": 13.372434
+ },
+ {
+  "name": "Universitätsplatz",
+  "lat": 52.491801,
+  "lon": 13.434194
+ },
+ {
+  "name": "Busbahnhof",
+  "lat": 52.521012,
+  "lon": 13.413429
+ },
+ {
+  "name": "Stadion",
+  "lat": 52.545751,
+  "lon": 13.505856
+ },
+ {
+  "name": "Kirche am Markt",
+  "lat": 52.46692,
+  "lon": 13.329218
+ },
+ {
+  "name": "Rosengarten",
+  "lat": 52.559075,
+  "lon": 13.388505
+ },
+ {
+  "name": "Rathausplatz Ost",
+  "lat": 52.534083,
+  "lon": 13.490696
+ },
+ {
+  "name": "Nordbahnhof Ost",
+  "lat": 52.520145,
+  "lon": 13.463447
+ },
+ {
+  "name": "Stadtpark Eingang Süd Ost",
+  "lat": 52.467804,
+  "lon": 13.473641
+ },
+ {
+  "name": "Markthalle Ost",
+  "lat": 52.497193,
+  "lon": 13.490263
+ },
+ {
+  "name": "Spreebrücke Ost",
+  "lat": 52.5512,
+  "lon": 13.481928
+ },
+ {
+  "name": "Kulturhaus Ost",
+  "lat": 52.477835,
+  "lon": 13.473945
+ },
+ {
+  "name": "Messehalle Ost",
+  "lat": 52.475655,
+  "lon": 13.478759
+ },
+ {
+  "name": "Zentralbibliothek Ost",
+  "lat": 52.519851,
+  "lon": 13.478902
+ },
+ {
+  "name": "Rathausplatz West",
+  "lat": 52.513412,
+  "lon": 13.414843
+ },
+ {
+  "name": "Nordbahnhof West",
+  "lat": 52.497108,
+  "lon": 13.327745
+ },
+ {
+  "name": "Stadtpark Eingang Süd West",
+  "lat": 52.504551,
+  "lon": 13.385716
+ },
+ {
+  "name": "Markthalle West",
+  "lat": 52.516825,
+  "lon": 13.393304
+ },
+ {
+  "name": "Spreebrücke West",
+  "lat": 52.543372,
+  "lon": 13.348605
+ },
+ {
+  "name": "Kulturhaus West",
+  "lat": 52.488296,
+  "lon": 13.382373
+ },
+ {
+  "name": "Messehalle West",
+  "lat": 52.500936,
+  "lon": 13.344387
+ },
+ {
+  "name": "Zentralbibliothek West",
+  "lat": 52.475206,
+  "lon": 13.306396
+ }
+]

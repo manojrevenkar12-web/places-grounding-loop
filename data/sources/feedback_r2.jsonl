@@ -1,0 +1,260 @@
+{"key": "fb/2/0", "source": "feedback", "kind": "closed", "lat": 52.541527, "lon": 13.400169, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/1", "source": "feedback", "kind": "closed", "lat": 52.516392, "lon": 13.512248, "name": "Tankstelle Becker", "category": "fuel", "release": 2}
+{"key": "fb/2/2", "source": "feedback", "kind": "closed", "lat": 52.454838, "lon": 13.370533, "name": "Geldautomat Spreebank", "category": "atm", "release": 2}
+{"key": "fb/2/3", "source": "feedback", "kind": "closed", "lat": 52.486572, "lon": 13.47727, "name": "Neumann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/4", "source": "feedback", "kind": "closed", "lat": 52.457422, "lon": 13.512994, "name": "Postfiliale Rosen", "category": "post_office", "release": 2}
+{"key": "fb/2/5", "source": "feedback", "kind": "closed", "lat": 52.537924, "lon": 13.516086, "name": "Trattoria Bahnhof", "category": "restaurant", "release": 2}
+{"key": "fb/2/6", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/7", "source": "feedback", "kind": "closed", "lat": 52.51111, "lon": 13.301743, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/8", "source": "feedback", "kind": "closed", "lat": 52.456223, "lon": 13.503297, "name": "Postfiliale Adler", "category": "post_office", "release": 2}
+{"key": "fb/2/9", "source": "feedback", "kind": "closed", "lat": 52.564653, "lon": 13.305575, "name": "Ladewerk", "category": "ev_charger", "release": 2}
+{"key": "fb/2/10", "source": "feedback", "kind": "closed", "lat": 52.474058, "lon": 13.320437, "name": "Ladestation Brunnenstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/11", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/12", "source": "feedback", "kind": "closed", "lat": 52.554785, "lon": 13.465257, "name": "Café Spree", "category": "cafe", "release": 2}
+{"key": "fb/2/13", "source": "feedback", "kind": "closed", "lat": 52.542724, "lon": 13.308414, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/14", "source": "feedback", "kind": "closed", "lat": 52.491257, "lon": 13.476647, "name": "Bäckerei Richter", "category": "bakery", "release": 2}
+{"key": "fb/2/15", "source": "feedback", "kind": "closed", "lat": 52.524344, "lon": 13.322792, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/16", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/17", "source": "feedback", "kind": "closed", "lat": 52.534182, "lon": 13.491708, "name": "Café Stern", "category": "cafe", "release": 2}
+{"key": "fb/2/18", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/19", "source": "feedback", "kind": "closed", "lat": 52.516392, "lon": 13.512248, "name": "Tankstelle Becker", "category": "fuel", "release": 2}
+{"key": "fb/2/20", "source": "feedback", "kind": "closed", "lat": 52.565733, "lon": 13.434489, "name": "Café Spree", "category": "cafe", "release": 2}
+{"key": "fb/2/21", "source": "feedback", "kind": "closed", "lat": 52.497359, "lon": 13.464911, "name": "Bistro Brunnen", "category": "restaurant", "release": 2}
+{"key": "fb/2/22", "source": "feedback", "kind": "closed", "lat": 52.544765, "lon": 13.390072, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/23", "source": "feedback", "kind": "closed", "lat": 52.534182, "lon": 13.491708, "name": "Café Stern", "category": "cafe", "release": 2}
+{"key": "fb/2/24", "source": "feedback", "kind": "closed", "lat": 52.502733, "lon": 13.290243, "name": "Café Park", "category": "cafe", "release": 2}
+{"key": "fb/2/25", "source": "feedback", "kind": "closed", "lat": 52.543843, "lon": 13.420348, "name": "Café Wiesen", "category": "cafe", "release": 2}
+{"key": "fb/2/26", "source": "feedback", "kind": "closed", "lat": 52.487155, "lon": 13.44309, "name": "Geldautomat Rosenbank", "category": "atm", "release": 2}
+{"key": "fb/2/27", "source": "feedback", "kind": "closed", "lat": 52.570592, "lon": 13.500049, "name": "Tankstelle Krüger", "category": "fuel", "release": 2}
+{"key": "fb/2/28", "source": "feedback", "kind": "closed", "lat": 52.572966, "lon": 13.435611, "name": "Café Bahnhof", "category": "cafe", "release": 2}
+{"key": "fb/2/29", "source": "feedback", "kind": "closed", "lat": 52.579318, "lon": 13.495223, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/30", "source": "feedback", "kind": "closed", "lat": 52.491257, "lon": 13.476647, "name": "Bäckerei Richter", "category": "bakery", "release": 2}
+{"key": "fb/2/31", "source": "feedback", "kind": "closed", "lat": 52.515106, "lon": 13.388707, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/32", "source": "feedback", "kind": "closed", "lat": 52.490445, "lon": 13.32254, "name": "Café Kiez", "category": "cafe", "release": 2}
+{"key": "fb/2/33", "source": "feedback", "kind": "closed", "lat": 52.544765, "lon": 13.390072, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/34", "source": "feedback", "kind": "closed", "lat": 52.544093, "lon": 13.359598, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/35", "source": "feedback", "kind": "closed", "lat": 52.478613, "lon": 13.384392, "name": "Becker Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/36", "source": "feedback", "kind": "closed", "lat": 52.543843, "lon": 13.420348, "name": "Café Wiesen", "category": "cafe", "release": 2}
+{"key": "fb/2/37", "source": "feedback", "kind": "closed", "lat": 52.456099, "lon": 13.311384, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/38", "source": "feedback", "kind": "closed", "lat": 52.575991, "lon": 13.30027, "name": "Hoffmann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/39", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/40", "source": "feedback", "kind": "closed", "lat": 52.515581, "lon": 13.48648, "name": "Café Spree", "category": "cafe", "release": 2}
+{"key": "fb/2/41", "source": "feedback", "kind": "closed", "lat": 52.524606, "lon": 13.46358, "name": "Trattoria Eichen", "category": "restaurant", "release": 2}
+{"key": "fb/2/42", "source": "feedback", "kind": "closed", "lat": 52.552215, "lon": 13.393108, "name": "Kaufgut", "category": "supermarket", "release": 2}
+{"key": "fb/2/43", "source": "feedback", "kind": "closed", "lat": 52.562215, "lon": 13.363336, "name": "Bistro Adler", "category": "restaurant", "release": 2}
+{"key": "fb/2/44", "source": "feedback", "kind": "closed", "lat": 52.523693, "lon": 13.372945, "name": "Imbiss Neumann", "category": "restaurant", "release": 2}
+{"key": "fb/2/45", "source": "feedback", "kind": "closed", "lat": 52.546788, "lon": 13.511719, "name": "Imbiss Wolf", "category": "restaurant", "release": 2}
+{"key": "fb/2/46", "source": "feedback", "kind": "closed", "lat": 52.574785, "lon": 13.507267, "name": "Geldautomat Kiezbank", "category": "atm", "release": 2}
+{"key": "fb/2/47", "source": "feedback", "kind": "closed", "lat": 52.575886, "lon": 13.373029, "name": "Ladestation Birkenallee", "category": "ev_charger", "release": 2}
+{"key": "fb/2/48", "source": "feedback", "kind": "closed", "lat": 52.575886, "lon": 13.373029, "name": "Ladestation Birkenallee", "category": "ev_charger", "release": 2}
+{"key": "fb/2/49", "source": "feedback", "kind": "closed", "lat": 52.542724, "lon": 13.308414, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/50", "source": "feedback", "kind": "closed", "lat": 52.552215, "lon": 13.393108, "name": "Kaufgut", "category": "supermarket", "release": 2}
+{"key": "fb/2/51", "source": "feedback", "kind": "closed", "lat": 52.516592, "lon": 13.505618, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/52", "source": "feedback", "kind": "closed", "lat": 52.490445, "lon": 13.32254, "name": "Café Kiez", "category": "cafe", "release": 2}
+{"key": "fb/2/53", "source": "feedback", "kind": "closed", "lat": 52.486572, "lon": 13.47727, "name": "Neumann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/54", "source": "feedback", "kind": "closed", "lat": 52.518646, "lon": 13.30943, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/55", "source": "feedback", "kind": "closed", "lat": 52.459514, "lon": 13.379995, "name": "Imbiss Weber", "category": "restaurant", "release": 2}
+{"key": "fb/2/56", "source": "feedback", "kind": "closed", "lat": 52.56542, "lon": 13.360293, "name": "Postfiliale Markt", "category": "post_office", "release": 2}
+{"key": "fb/2/57", "source": "feedback", "kind": "closed", "lat": 52.556348, "lon": 13.459947, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/58", "source": "feedback", "kind": "closed", "lat": 52.486572, "lon": 13.47727, "name": "Neumann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/59", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/60", "source": "feedback", "kind": "closed", "lat": 52.563188, "lon": 13.443866, "name": "Bäckerei Wolf", "category": "bakery", "release": 2}
+{"key": "fb/2/61", "source": "feedback", "kind": "closed", "lat": 52.573474, "lon": 13.284495, "name": "Gasthaus Rosen", "category": "restaurant", "release": 2}
+{"key": "fb/2/62", "source": "feedback", "kind": "closed", "lat": 52.478613, "lon": 13.384392, "name": "Becker Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/63", "source": "feedback", "kind": "closed", "lat": 52.526847, "lon": 13.342273, "name": "Geldautomat Bahnhofbank", "category": "atm", "release": 2}
+{"key": "fb/2/64", "source": "feedback", "kind": "closed", "lat": 52.519045, "lon": 13.49896, "name": "Ladestation Ahornweg", "category": "ev_charger", "release": 2}
+{"key": "fb/2/65", "source": "feedback", "kind": "closed", "lat": 52.47855, "lon": 13.472643, "name": "Ladestation Birkenallee", "category": "ev_charger", "release": 2}
+{"key": "fb/2/66", "source": "feedback", "kind": "closed", "lat": 52.559312, "lon": 13.384555, "name": "Postfiliale Turm", "category": "post_office", "release": 2}
+{"key": "fb/2/67", "source": "feedback", "kind": "closed", "lat": 52.546447, "lon": 13.296146, "name": "Klein Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/68", "source": "feedback", "kind": "closed", "lat": 52.517869, "lon": 13.382339, "name": "Café Turm", "category": "cafe", "release": 2}
+{"key": "fb/2/69", "source": "feedback", "kind": "closed", "lat": 52.544765, "lon": 13.390072, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/70", "source": "feedback", "kind": "closed", "lat": 52.520348, "lon": 13.289813, "name": "Tankstelle Richter", "category": "fuel", "release": 2}
+{"key": "fb/2/71", "source": "feedback", "kind": "closed", "lat": 52.542724, "lon": 13.308414, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/72", "source": "feedback", "kind": "closed", "lat": 52.537924, "lon": 13.516086, "name": "Trattoria Bahnhof", "category": "restaurant", "release": 2}
+{"key": "fb/2/73", "source": "feedback", "kind": "closed", "lat": 52.516592, "lon": 13.505618, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/74", "source": "feedback", "kind": "closed", "lat": 52.474058, "lon": 13.320437, "name": "Ladestation Brunnenstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/75", "source": "feedback", "kind": "closed", "lat": 52.495833, "lon": 13.4001, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/76", "source": "feedback", "kind": "closed", "lat": 52.497359, "lon": 13.464911, "name": "Bistro Brunnen", "category": "restaurant", "release": 2}
+{"key": "fb/2/77", "source": "feedback", "kind": "closed", "lat": 52.547225, "lon": 13.341449, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/78", "source": "feedback", "kind": "closed", "lat": 52.529702, "lon": 13.356249, "name": "Bistro Hafen", "category": "restaurant", "release": 2}
+{"key": "fb/2/79", "source": "feedback", "kind": "closed", "lat": 52.490445, "lon": 13.32254, "name": "Café Kiez", "category": "cafe", "release": 2}
+{"key": "fb/2/80", "source": "feedback", "kind": "closed", "lat": 52.502733, "lon": 13.290243, "name": "Café Park", "category": "cafe", "release": 2}
+{"key": "fb/2/81", "source": "feedback", "kind": "closed", "lat": 52.554785, "lon": 13.465257, "name": "Café Spree", "category": "cafe", "release": 2}
+{"key": "fb/2/82", "source": "feedback", "kind": "closed", "lat": 52.562215, "lon": 13.363336, "name": "Bistro Adler", "category": "restaurant", "release": 2}
+{"key": "fb/2/83", "source": "feedback", "kind": "closed", "lat": 52.562086, "lon": 13.431474, "name": "Café Kiez", "category": "cafe", "release": 2}
+{"key": "fb/2/84", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/85", "source": "feedback", "kind": "closed", "lat": 52.552367, "lon": 13.29004, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/86", "source": "feedback", "kind": "closed", "lat": 52.578037, "lon": 13.430519, "name": "Café Park", "category": "cafe", "release": 2}
+{"key": "fb/2/87", "source": "feedback", "kind": "closed", "lat": 52.45797, "lon": 13.455348, "name": "Brunnen-Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/88", "source": "feedback", "kind": "closed", "lat": 52.46305, "lon": 13.41233, "name": "Bäckerei Wolf", "category": "bakery", "release": 2}
+{"key": "fb/2/89", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/90", "source": "feedback", "kind": "closed", "lat": 52.541527, "lon": 13.400169, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/91", "source": "feedback", "kind": "closed", "lat": 52.551198, "lon": 13.479743, "name": "Bistro Mond", "category": "restaurant", "release": 2}
+{"key": "fb/2/92", "source": "feedback", "kind": "closed", "lat": 52.554517, "lon": 13.486471, "name": "Bahnhof-Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/93", "source": "feedback", "kind": "closed", "lat": 52.525517, "lon": 13.495396, "name": "Turm-Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/94", "source": "feedback", "kind": "closed", "lat": 52.575099, "lon": 13.466754, "name": "Tankpunkt", "category": "fuel", "release": 2}
+{"key": "fb/2/95", "source": "feedback", "kind": "closed", "lat": 52.579318, "lon": 13.495223, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/96", "source": "feedback", "kind": "closed", "lat": 52.458368, "lon": 13.448493, "name": "Hoffmann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/97", "source": "feedback", "kind": "closed", "lat": 52.497359, "lon": 13.464911, "name": "Bistro Brunnen", "category": "restaurant", "release": 2}
+{"key": "fb/2/98", "source": "feedback", "kind": "closed", "lat": 52.474058, "lon": 13.320437, "name": "Ladestation Brunnenstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/99", "source": "feedback", "kind": "closed", "lat": 52.467362, "lon": 13.451069, "name": "Brunnen-Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/100", "source": "feedback", "kind": "closed", "lat": 52.487007, "lon": 13.39216, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/101", "source": "feedback", "kind": "closed", "lat": 52.487007, "lon": 13.39216, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/102", "source": "feedback", "kind": "closed", "lat": 52.562215, "lon": 13.363336, "name": "Bistro Adler", "category": "restaurant", "release": 2}
+{"key": "fb/2/103", "source": "feedback", "kind": "closed", "lat": 52.560364, "lon": 13.402965, "name": "Bäckerei Krüger", "category": "bakery", "release": 2}
+{"key": "fb/2/104", "source": "feedback", "kind": "closed", "lat": 52.516414, "lon": 13.435892, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/105", "source": "feedback", "kind": "closed", "lat": 52.537924, "lon": 13.516086, "name": "Trattoria Bahnhof", "category": "restaurant", "release": 2}
+{"key": "fb/2/106", "source": "feedback", "kind": "closed", "lat": 52.474058, "lon": 13.320437, "name": "Ladestation Brunnenstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/107", "source": "feedback", "kind": "closed", "lat": 52.487155, "lon": 13.44309, "name": "Geldautomat Rosenbank", "category": "atm", "release": 2}
+{"key": "fb/2/108", "source": "feedback", "kind": "closed", "lat": 52.552367, "lon": 13.29004, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/109", "source": "feedback", "kind": "closed", "lat": 52.541527, "lon": 13.400169, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/110", "source": "feedback", "kind": "closed", "lat": 52.552238, "lon": 13.359525, "name": "Trattoria Markt", "category": "restaurant", "release": 2}
+{"key": "fb/2/111", "source": "feedback", "kind": "closed", "lat": 52.462207, "lon": 13.465584, "name": "Bäckerei Hoffmann", "category": "bakery", "release": 2}
+{"key": "fb/2/112", "source": "feedback", "kind": "closed", "lat": 52.516592, "lon": 13.505618, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/113", "source": "feedback", "kind": "closed", "lat": 52.456771, "lon": 13.432355, "name": "Richter Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/114", "source": "feedback", "kind": "closed", "lat": 52.478613, "lon": 13.384392, "name": "Becker Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/115", "source": "feedback", "kind": "closed", "lat": 52.562215, "lon": 13.363336, "name": "Bistro Adler", "category": "restaurant", "release": 2}
+{"key": "fb/2/116", "source": "feedback", "kind": "closed", "lat": 52.534182, "lon": 13.491708, "name": "Café Stern", "category": "cafe", "release": 2}
+{"key": "fb/2/117", "source": "feedback", "kind": "closed", "lat": 52.547225, "lon": 13.341449, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/118", "source": "feedback", "kind": "closed", "lat": 52.516414, "lon": 13.435892, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/119", "source": "feedback", "kind": "closed", "lat": 52.546899, "lon": 13.454464, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/120", "source": "feedback", "kind": "closed", "lat": 52.560364, "lon": 13.402965, "name": "Bäckerei Krüger", "category": "bakery", "release": 2}
+{"key": "fb/2/121", "source": "feedback", "kind": "closed", "lat": 52.487155, "lon": 13.44309, "name": "Geldautomat Rosenbank", "category": "atm", "release": 2}
+{"key": "fb/2/122", "source": "feedback", "kind": "closed", "lat": 52.494239, "lon": 13.487837, "name": "Schulz Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/123", "source": "feedback", "kind": "closed", "lat": 52.573474, "lon": 13.284495, "name": "Gasthaus Rosen", "category": "restaurant", "release": 2}
+{"key": "fb/2/124", "source": "feedback", "kind": "closed", "lat": 52.464411, "lon": 13.288252, "name": "Geldautomat Parkbank", "category": "atm", "release": 2}
+{"key": "fb/2/125", "source": "feedback", "kind": "closed", "lat": 52.533817, "lon": 13.289658, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/126", "source": "feedback", "kind": "closed", "lat": 52.491257, "lon": 13.476647, "name": "Bäckerei Richter", "category": "bakery", "release": 2}
+{"key": "fb/2/127", "source": "feedback", "kind": "closed", "lat": 52.563625, "lon": 13.395228, "name": "Trattoria Turm", "category": "restaurant", "release": 2}
+{"key": "fb/2/128", "source": "feedback", "kind": "closed", "lat": 52.552367, "lon": 13.29004, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/129", "source": "feedback", "kind": "closed", "lat": 52.573474, "lon": 13.284495, "name": "Gasthaus Rosen", "category": "restaurant", "release": 2}
+{"key": "fb/2/130", "source": "feedback", "kind": "closed", "lat": 52.543812, "lon": 13.469002, "name": "Ladestation Feldstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/131", "source": "feedback", "kind": "closed", "lat": 52.502733, "lon": 13.290243, "name": "Café Park", "category": "cafe", "release": 2}
+{"key": "fb/2/132", "source": "feedback", "kind": "closed", "lat": 52.464734, "lon": 13.289523, "name": "Bäckerei Becker", "category": "bakery", "release": 2}
+{"key": "fb/2/133", "source": "feedback", "kind": "closed", "lat": 52.475441, "lon": 13.317812, "name": "Postfiliale Markt", "category": "post_office", "release": 2}
+{"key": "fb/2/134", "source": "feedback", "kind": "closed", "lat": 52.574785, "lon": 13.507267, "name": "Geldautomat Kiezbank", "category": "atm", "release": 2}
+{"key": "fb/2/135", "source": "feedback", "kind": "closed", "lat": 52.515106, "lon": 13.388707, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/136", "source": "feedback", "kind": "closed", "lat": 52.516592, "lon": 13.505618, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/137", "source": "feedback", "kind": "closed", "lat": 52.575991, "lon": 13.30027, "name": "Hoffmann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/138", "source": "feedback", "kind": "closed", "lat": 52.516414, "lon": 13.435892, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/139", "source": "feedback", "kind": "closed", "lat": 52.543812, "lon": 13.469002, "name": "Ladestation Feldstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/140", "source": "feedback", "kind": "closed", "lat": 52.475441, "lon": 13.317812, "name": "Postfiliale Markt", "category": "post_office", "release": 2}
+{"key": "fb/2/141", "source": "feedback", "kind": "closed", "lat": 52.517869, "lon": 13.382339, "name": "Café Turm", "category": "cafe", "release": 2}
+{"key": "fb/2/142", "source": "feedback", "kind": "closed", "lat": 52.479233, "lon": 13.480533, "name": "Bäckerei Becker", "category": "bakery", "release": 2}
+{"key": "fb/2/143", "source": "feedback", "kind": "closed", "lat": 52.462207, "lon": 13.465584, "name": "Bäckerei Hoffmann", "category": "bakery", "release": 2}
+{"key": "fb/2/144", "source": "feedback", "kind": "closed", "lat": 52.547225, "lon": 13.341449, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/145", "source": "feedback", "kind": "closed", "lat": 52.544388, "lon": 13.495095, "name": "Gasthaus Bahnhof", "category": "restaurant", "release": 2}
+{"key": "fb/2/146", "source": "feedback", "kind": "closed", "lat": 52.560364, "lon": 13.402965, "name": "Bäckerei Krüger", "category": "bakery", "release": 2}
+{"key": "fb/2/147", "source": "feedback", "kind": "closed", "lat": 52.51544, "lon": 13.517944, "name": "Ladewerk", "category": "ev_charger", "release": 2}
+{"key": "fb/2/148", "source": "feedback", "kind": "closed", "lat": 52.498838, "lon": 13.303628, "name": "Café Stern", "category": "cafe", "release": 2}
+{"key": "fb/2/149", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/150", "source": "feedback", "kind": "closed", "lat": 52.497359, "lon": 13.464911, "name": "Bistro Brunnen", "category": "restaurant", "release": 2}
+{"key": "fb/2/151", "source": "feedback", "kind": "closed", "lat": 52.516414, "lon": 13.435892, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/152", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/153", "source": "feedback", "kind": "closed", "lat": 52.575099, "lon": 13.466754, "name": "Tankpunkt", "category": "fuel", "release": 2}
+{"key": "fb/2/154", "source": "feedback", "kind": "closed", "lat": 52.576709, "lon": 13.427909, "name": "Imbiss Klein", "category": "restaurant", "release": 2}
+{"key": "fb/2/155", "source": "feedback", "kind": "closed", "lat": 52.539102, "lon": 13.43039, "name": "Geldautomat Mondbank", "category": "atm", "release": 2}
+{"key": "fb/2/156", "source": "feedback", "kind": "closed", "lat": 52.529045, "lon": 13.408758, "name": "Café Mond", "category": "cafe", "release": 2}
+{"key": "fb/2/157", "source": "feedback", "kind": "closed", "lat": 52.513743, "lon": 13.29218, "name": "Tankstelle Wolf", "category": "fuel", "release": 2}
+{"key": "fb/2/158", "source": "feedback", "kind": "closed", "lat": 52.541527, "lon": 13.400169, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/159", "source": "feedback", "kind": "closed", "lat": 52.559863, "lon": 13.448408, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/160", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/161", "source": "feedback", "kind": "closed", "lat": 52.560364, "lon": 13.402965, "name": "Bäckerei Krüger", "category": "bakery", "release": 2}
+{"key": "fb/2/162", "source": "feedback", "kind": "closed", "lat": 52.546788, "lon": 13.511719, "name": "Imbiss Wolf", "category": "restaurant", "release": 2}
+{"key": "fb/2/163", "source": "feedback", "kind": "closed", "lat": 52.456497, "lon": 13.308953, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/164", "source": "feedback", "kind": "closed", "lat": 52.560364, "lon": 13.402965, "name": "Bäckerei Krüger", "category": "bakery", "release": 2}
+{"key": "fb/2/165", "source": "feedback", "kind": "closed", "lat": 52.552215, "lon": 13.393108, "name": "Kaufgut", "category": "supermarket", "release": 2}
+{"key": "fb/2/166", "source": "feedback", "kind": "closed", "lat": 52.51218, "lon": 13.341681, "name": "Ladestation Brunnenstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/167", "source": "feedback", "kind": "closed", "lat": 52.542724, "lon": 13.308414, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/168", "source": "feedback", "kind": "closed", "lat": 52.486572, "lon": 13.47727, "name": "Neumann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/169", "source": "feedback", "kind": "closed", "lat": 52.574785, "lon": 13.507267, "name": "Geldautomat Kiezbank", "category": "atm", "release": 2}
+{"key": "fb/2/170", "source": "feedback", "kind": "closed", "lat": 52.544765, "lon": 13.390072, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/171", "source": "feedback", "kind": "closed", "lat": 52.491257, "lon": 13.476647, "name": "Bäckerei Richter", "category": "bakery", "release": 2}
+{"key": "fb/2/172", "source": "feedback", "kind": "closed", "lat": 52.542724, "lon": 13.308414, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/173", "source": "feedback", "kind": "closed", "lat": 52.456099, "lon": 13.311384, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/174", "source": "feedback", "kind": "closed", "lat": 52.575886, "lon": 13.373029, "name": "Ladestation Birkenallee", "category": "ev_charger", "release": 2}
+{"key": "fb/2/175", "source": "feedback", "kind": "closed", "lat": 52.552367, "lon": 13.29004, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/176", "source": "feedback", "kind": "closed", "lat": 52.547225, "lon": 13.341449, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/177", "source": "feedback", "kind": "closed", "lat": 52.452827, "lon": 13.50431, "name": "Trattoria Hafen", "category": "restaurant", "release": 2}
+{"key": "fb/2/178", "source": "feedback", "kind": "closed", "lat": 52.561629, "lon": 13.454052, "name": "Ladestation Schulstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/179", "source": "feedback", "kind": "closed", "lat": 52.552337, "lon": 13.3749, "name": "Trattoria Kiez", "category": "restaurant", "release": 2}
+{"key": "fb/2/180", "source": "feedback", "kind": "closed", "lat": 52.475441, "lon": 13.317812, "name": "Postfiliale Markt", "category": "post_office", "release": 2}
+{"key": "fb/2/181", "source": "feedback", "kind": "closed", "lat": 52.500266, "lon": 13.326206, "name": "Krüger Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/182", "source": "feedback", "kind": "closed", "lat": 52.553707, "lon": 13.429243, "name": "Café Stern", "category": "cafe", "release": 2}
+{"key": "fb/2/183", "source": "feedback", "kind": "closed", "lat": 52.516592, "lon": 13.505618, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/184", "source": "feedback", "kind": "closed", "lat": 52.577589, "lon": 13.471979, "name": "Bistro Eichen", "category": "restaurant", "release": 2}
+{"key": "fb/2/185", "source": "feedback", "kind": "closed", "lat": 52.487155, "lon": 13.44309, "name": "Geldautomat Rosenbank", "category": "atm", "release": 2}
+{"key": "fb/2/186", "source": "feedback", "kind": "closed", "lat": 52.549168, "lon": 13.464869, "name": "Wiesen-Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/187", "source": "feedback", "kind": "closed", "lat": 52.454184, "lon": 13.317056, "name": "Kornfeld", "category": "bakery", "release": 2}
+{"key": "fb/2/188", "source": "feedback", "kind": "closed", "lat": 52.547225, "lon": 13.341449, "name": "Bäckerei Weber", "category": "bakery", "release": 2}
+{"key": "fb/2/189", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/190", "source": "feedback", "kind": "closed", "lat": 52.537924, "lon": 13.516086, "name": "Trattoria Bahnhof", "category": "restaurant", "release": 2}
+{"key": "fb/2/191", "source": "feedback", "kind": "closed", "lat": 52.546788, "lon": 13.511719, "name": "Imbiss Wolf", "category": "restaurant", "release": 2}
+{"key": "fb/2/192", "source": "feedback", "kind": "closed", "lat": 52.513743, "lon": 13.29218, "name": "Tankstelle Wolf", "category": "fuel", "release": 2}
+{"key": "fb/2/193", "source": "feedback", "kind": "closed", "lat": 52.516414, "lon": 13.435892, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/194", "source": "feedback", "kind": "closed", "lat": 52.552337, "lon": 13.3749, "name": "Trattoria Kiez", "category": "restaurant", "release": 2}
+{"key": "fb/2/195", "source": "feedback", "kind": "closed", "lat": 52.462207, "lon": 13.465584, "name": "Bäckerei Hoffmann", "category": "bakery", "release": 2}
+{"key": "fb/2/196", "source": "feedback", "kind": "closed", "lat": 52.560231, "lon": 13.414862, "name": "Bäckerei Richter", "category": "bakery", "release": 2}
+{"key": "fb/2/197", "source": "feedback", "kind": "closed", "lat": 52.575991, "lon": 13.30027, "name": "Hoffmann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/198", "source": "feedback", "kind": "closed", "lat": 52.516392, "lon": 13.512248, "name": "Tankstelle Becker", "category": "fuel", "release": 2}
+{"key": "fb/2/199", "source": "feedback", "kind": "closed", "lat": 52.563607, "lon": 13.364439, "name": "Geldautomat Brunnenbank", "category": "atm", "release": 2}
+{"key": "fb/2/200", "source": "feedback", "kind": "closed", "lat": 52.572512, "lon": 13.380983, "name": "Trattoria Wiesen", "category": "restaurant", "release": 2}
+{"key": "fb/2/201", "source": "feedback", "kind": "closed", "lat": 52.575099, "lon": 13.466754, "name": "Tankpunkt", "category": "fuel", "release": 2}
+{"key": "fb/2/202", "source": "feedback", "kind": "closed", "lat": 52.462207, "lon": 13.465584, "name": "Bäckerei Hoffmann", "category": "bakery", "release": 2}
+{"key": "fb/2/203", "source": "feedback", "kind": "closed", "lat": 52.462207, "lon": 13.465584, "name": "Bäckerei Hoffmann", "category": "bakery", "release": 2}
+{"key": "fb/2/204", "source": "feedback", "kind": "closed", "lat": 52.47855, "lon": 13.472643, "name": "Ladestation Birkenallee", "category": "ev_charger", "release": 2}
+{"key": "fb/2/205", "source": "feedback", "kind": "closed", "lat": 52.554785, "lon": 13.465257, "name": "Café Spree", "category": "cafe", "release": 2}
+{"key": "fb/2/206", "source": "feedback", "kind": "closed", "lat": 52.545488, "lon": 13.514246, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/207", "source": "feedback", "kind": "closed", "lat": 52.491058, "lon": 13.487778, "name": "Café Mond", "category": "cafe", "release": 2}
+{"key": "fb/2/208", "source": "feedback", "kind": "closed", "lat": 52.563625, "lon": 13.395228, "name": "Trattoria Turm", "category": "restaurant", "release": 2}
+{"key": "fb/2/209", "source": "feedback", "kind": "closed", "lat": 52.522903, "lon": 13.343028, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/210", "source": "feedback", "kind": "closed", "lat": 52.459514, "lon": 13.379995, "name": "Imbiss Weber", "category": "restaurant", "release": 2}
+{"key": "fb/2/211", "source": "feedback", "kind": "closed", "lat": 52.556348, "lon": 13.459947, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/212", "source": "feedback", "kind": "closed", "lat": 52.462722, "lon": 13.328401, "name": "Imbiss Neumann", "category": "restaurant", "release": 2}
+{"key": "fb/2/213", "source": "feedback", "kind": "closed", "lat": 52.537445, "lon": 13.513104, "name": "Postfiliale Markt", "category": "post_office", "release": 2}
+{"key": "fb/2/214", "source": "feedback", "kind": "closed", "lat": 52.573474, "lon": 13.284495, "name": "Gasthaus Rosen", "category": "restaurant", "release": 2}
+{"key": "fb/2/215", "source": "feedback", "kind": "closed", "lat": 52.457522, "lon": 13.317964, "name": "Café Linden", "category": "cafe", "release": 2}
+{"key": "fb/2/216", "source": "feedback", "kind": "closed", "lat": 52.554785, "lon": 13.465257, "name": "Café Spree", "category": "cafe", "release": 2}
+{"key": "fb/2/217", "source": "feedback", "kind": "closed", "lat": 52.526787, "lon": 13.50895, "name": "Stern-Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/218", "source": "feedback", "kind": "closed", "lat": 52.575099, "lon": 13.466754, "name": "Tankpunkt", "category": "fuel", "release": 2}
+{"key": "fb/2/219", "source": "feedback", "kind": "closed", "lat": 52.486572, "lon": 13.47727, "name": "Neumann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/220", "source": "feedback", "kind": "closed", "lat": 52.464734, "lon": 13.289523, "name": "Bäckerei Becker", "category": "bakery", "release": 2}
+{"key": "fb/2/221", "source": "feedback", "kind": "closed", "lat": 52.478613, "lon": 13.384392, "name": "Becker Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/222", "source": "feedback", "kind": "closed", "lat": 52.510181, "lon": 13.393803, "name": "Café Brunnen", "category": "cafe", "release": 2}
+{"key": "fb/2/223", "source": "feedback", "kind": "closed", "lat": 52.578037, "lon": 13.430519, "name": "Café Park", "category": "cafe", "release": 2}
+{"key": "fb/2/224", "source": "feedback", "kind": "closed", "lat": 52.563188, "lon": 13.443866, "name": "Bäckerei Wolf", "category": "bakery", "release": 2}
+{"key": "fb/2/225", "source": "feedback", "kind": "closed", "lat": 52.546788, "lon": 13.511719, "name": "Imbiss Wolf", "category": "restaurant", "release": 2}
+{"key": "fb/2/226", "source": "feedback", "kind": "closed", "lat": 52.486572, "lon": 13.47727, "name": "Neumann Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/227", "source": "feedback", "kind": "closed", "lat": 52.489116, "lon": 13.357868, "name": "Bistro Sonnen", "category": "restaurant", "release": 2}
+{"key": "fb/2/228", "source": "feedback", "kind": "closed", "lat": 52.574785, "lon": 13.507267, "name": "Geldautomat Kiezbank", "category": "atm", "release": 2}
+{"key": "fb/2/229", "source": "feedback", "kind": "closed", "lat": 52.539102, "lon": 13.43039, "name": "Geldautomat Mondbank", "category": "atm", "release": 2}
+{"key": "fb/2/230", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/231", "source": "feedback", "kind": "closed", "lat": 52.573516, "lon": 13.368476, "name": "Imbiss Hoffmann", "category": "restaurant", "release": 2}
+{"key": "fb/2/232", "source": "feedback", "kind": "closed", "lat": 52.491058, "lon": 13.487778, "name": "Café Mond", "category": "cafe", "release": 2}
+{"key": "fb/2/233", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/234", "source": "feedback", "kind": "closed", "lat": 52.474405, "lon": 13.403336, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/235", "source": "feedback", "kind": "closed", "lat": 52.459903, "lon": 13.480205, "name": "Bistro Turm", "category": "restaurant", "release": 2}
+{"key": "fb/2/236", "source": "feedback", "kind": "closed", "lat": 52.557857, "lon": 13.336978, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/237", "source": "feedback", "kind": "closed", "lat": 52.490445, "lon": 13.32254, "name": "Café Kiez", "category": "cafe", "release": 2}
+{"key": "fb/2/238", "source": "feedback", "kind": "closed", "lat": 52.574785, "lon": 13.507267, "name": "Geldautomat Kiezbank", "category": "atm", "release": 2}
+{"key": "fb/2/239", "source": "feedback", "kind": "closed", "lat": 52.525398, "lon": 13.37793, "name": "Gasthaus Adler", "category": "restaurant", "release": 2}
+{"key": "fb/2/240", "source": "feedback", "kind": "closed", "lat": 52.563188, "lon": 13.443866, "name": "Bäckerei Wolf", "category": "bakery", "release": 2}
+{"key": "fb/2/241", "source": "feedback", "kind": "closed", "lat": 52.483169, "lon": 13.505571, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/242", "source": "feedback", "kind": "closed", "lat": 52.545488, "lon": 13.514246, "name": "FrischMarkt", "category": "supermarket", "release": 2}
+{"key": "fb/2/243", "source": "feedback", "kind": "closed", "lat": 52.562215, "lon": 13.363336, "name": "Bistro Adler", "category": "restaurant", "release": 2}
+{"key": "fb/2/244", "source": "feedback", "kind": "closed", "lat": 52.537924, "lon": 13.516086, "name": "Trattoria Bahnhof", "category": "restaurant", "release": 2}
+{"key": "fb/2/245", "source": "feedback", "kind": "closed", "lat": 52.489116, "lon": 13.357868, "name": "Bistro Sonnen", "category": "restaurant", "release": 2}
+{"key": "fb/2/246", "source": "feedback", "kind": "closed", "lat": 52.542724, "lon": 13.308414, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/247", "source": "feedback", "kind": "closed", "lat": 52.451131, "lon": 13.431422, "name": "Richter Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/248", "source": "feedback", "kind": "closed", "lat": 52.478613, "lon": 13.384392, "name": "Becker Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/249", "source": "feedback", "kind": "closed", "lat": 52.476835, "lon": 13.456088, "name": "Gesundpunkt Apotheke", "category": "pharmacy", "release": 2}
+{"key": "fb/2/250", "source": "feedback", "kind": "closed", "lat": 52.552215, "lon": 13.393108, "name": "Kaufgut", "category": "supermarket", "release": 2}
+{"key": "fb/2/251", "source": "feedback", "kind": "closed", "lat": 52.478613, "lon": 13.384392, "name": "Becker Lebensmittel", "category": "supermarket", "release": 2}
+{"key": "fb/2/252", "source": "feedback", "kind": "closed", "lat": 52.456099, "lon": 13.311384, "name": "Café Adler", "category": "cafe", "release": 2}
+{"key": "fb/2/253", "source": "feedback", "kind": "closed", "lat": 52.519005, "lon": 13.498883, "name": "Ladestation Ahornweg", "category": "ev_charger", "release": 2}
+{"key": "fb/2/254", "source": "feedback", "kind": "closed", "lat": 52.466405, "lon": 13.404397, "name": "Bohnenwerk", "category": "cafe", "release": 2}
+{"key": "fb/2/255", "source": "feedback", "kind": "closed", "lat": 52.517869, "lon": 13.382339, "name": "Café Turm", "category": "cafe", "release": 2}
+{"key": "fb/2/256", "source": "feedback", "kind": "closed", "lat": 52.463348, "lon": 13.49629, "name": "Ladestation Bahnhofstraße", "category": "ev_charger", "release": 2}
+{"key": "fb/2/257", "source": "feedback", "kind": "closed", "lat": 52.462722, "lon": 13.328401, "name": "Imbiss Neumann", "category": "restaurant", "release": 2}
+{"key": "fb/2/258", "source": "feedback", "kind": "closed", "lat": 52.517869, "lon": 13.382339, "name": "Café Turm", "category": "cafe", "release": 2}
+{"key": "fb/2/259", "source": "feedback", "kind": "closed", "lat": 52.560231, "lon": 13.414862, "name": "Bäckerei Richter", "category": "bakery", "release": 2}

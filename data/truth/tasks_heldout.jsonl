@@ -1,0 +1,53 @@
+{"id": "HEL-001", "accept_pids": ["W00832", "W00040", "W00310"], "category": "cafe", "nearest_m": 1564.6}
+{"id": "HEL-002", "accept_pids": ["W00274"], "eta_min": 85.1}
+{"id": "HEL-003", "accept_pids": ["N00051"], "category": "cafe", "nearest_m": 170.7}
+{"id": "HEL-004", "accept_pids": ["W00658"], "phone": "+49 30 4462050"}
+{"id": "HEL-006", "accept_pids": ["W00575"], "category": "restaurant", "nearest_m": 336.1}
+{"id": "HEL-007", "accept_pids": ["W00274"], "eta_min": 44.3}
+{"id": "HEL-009", "accept_pids": ["W01168"], "phone": "+49 30 4300705"}
+{"id": "HEL-010", "accept_pids": ["W00966"], "category": "post_office", "nearest_m": 290.7}
+{"id": "HEL-011", "accept_pids": ["W00690"], "category": "restaurant", "nearest_m": 467.8}
+{"id": "HEL-012", "accept_pids": ["W00640"], "eta_min": 145.7}
+{"id": "HEL-014", "accept_pids": ["W00773"], "phone": "+49 30 5803860"}
+{"id": "HEL-015", "accept_pids": ["W00520"], "category": "fuel", "nearest_m": 403.1}
+{"id": "HEL-016", "accept_pids": ["W00300", "W00606"], "category": "supermarket", "nearest_m": 220.6}
+{"id": "HEL-017", "accept_pids": ["W00360"], "eta_min": 15.6}
+{"id": "HEL-018", "accept_pids": ["W00670", "W00613", "W00699"], "category": "bakery", "nearest_m": 841.8}
+{"id": "HEL-019", "accept_pids": ["W00789"], "phone": "+49 30 9491245"}
+{"id": "HEL-021", "accept_pids": ["W01124"], "category": "cafe", "nearest_m": 809.9}
+{"id": "HEL-022", "accept_pids": ["W00644"], "eta_min": 99.9}
+{"id": "HEL-023", "accept_pids": ["W00468"], "category": "supermarket", "nearest_m": 599.1}
+{"id": "HEL-024", "accept_pids": ["W01158"], "phone": "+49 30 5943020"}
+{"id": "HEL-025", "accept_pids": ["W00410"], "category": "ev_charger", "nearest_m": 870.0}
+{"id": "HEL-026", "accept_pids": ["N00023", "W00889"], "category": "supermarket", "nearest_m": 1261.6}
+{"id": "HEL-027", "accept_pids": ["W01277"], "eta_min": 15.2}
+{"id": "HEL-029", "accept_pids": ["W00944"], "phone": "+49 30 1550631"}
+{"id": "HEL-030", "accept_pids": ["W00837", "W01291"], "category": "fuel", "nearest_m": 1270.5}
+{"id": "HEL-031", "accept_pids": ["N00003"], "category": "cafe", "nearest_m": 247.4}
+{"id": "HEL-032", "accept_pids": ["W00416"], "eta_min": 124.9}
+{"id": "HEL-034", "accept_pids": ["W00106"], "phone": "+49 30 1658050"}
+{"id": "HEL-035", "accept_pids": ["W01251", "W00375", "W00374", "W00837", "W00722", "W00526"], "category": "fuel", "nearest_m": 1764.8}
+{"id": "HEL-036", "accept_pids": ["N00003", "W00773", "W00352"], "category": "cafe", "nearest_m": 247.4}
+{"id": "HEL-037", "accept_pids": ["W00972"], "eta_min": 56.4}
+{"id": "HEL-038", "accept_pids": ["W00164", "W01048"], "category": "pharmacy", "nearest_m": 883.4}
+{"id": "HEL-039", "accept_pids": ["N00023"], "phone": "+49 30 2866480"}
+{"id": "HEL-040", "accept_pids": ["W00550"], "category": "ev_charger", "nearest_m": 118.7}
+{"id": "HEL-041", "accept_pids": ["W00452", "W00538"], "category": "pharmacy", "nearest_m": 323.3}
+{"id": "HEL-042", "accept_pids": ["W00553"], "eta_min": 61.9}
+{"id": "HEL-043", "accept_pids": ["W00826", "W00933"], "category": "bakery", "nearest_m": 600.8}
+{"id": "HEL-044", "accept_pids": ["W00303"], "phone": "+49 30 4054648"}
+{"id": "HEL-045", "accept_pids": ["W00213", "W00151", "W01359", "W00407", "W00406", "W00914"], "category": "ev_charger", "nearest_m": 1451.7}
+{"id": "HEL-046", "accept_pids": ["W01358", "W01110", "W01113"], "category": "cafe", "nearest_m": 555.1}
+{"id": "HEL-047", "accept_pids": ["W00913"], "eta_min": 50.2}
+{"id": "HEL-048", "accept_pids": ["N00051", "N00050"], "category": "cafe", "nearest_m": 170.7}
+{"id": "HEL-049", "accept_pids": ["W01058"], "phone": "+49 30 5433455"}
+{"id": "HEL-050", "accept_pids": ["W00792"], "category": "fuel", "nearest_m": 1331.5}
+{"id": "HEL-051", "accept_pids": ["W00835", "W00398", "W01110", "W00353", "W00694"], "category": "cafe", "nearest_m": 789.5}
+{"id": "HEL-052", "accept_pids": ["W00410"], "eta_min": 99.5}
+{"id": "HEL-054", "accept_pids": ["W00944"], "phone": "+49 30 1550631"}
+{"id": "HEL-055", "accept_pids": ["W01134"], "category": "post_office", "nearest_m": 1045.6}
+{"id": "HEL-056", "accept_pids": ["W00627", "W00465", "W00972", "W00321"], "category": "pharmacy", "nearest_m": 1477.4}
+{"id": "HEL-057", "accept_pids": ["W01344"], "eta_min": 97.2}
+{"id": "HEL-058", "accept_pids": ["W00856", "W00911"], "category": "supermarket", "nearest_m": 472.7}
+{"id": "HEL-059", "accept_pids": ["W00201"], "phone": "+49 30 6390131"}
+{"id": "HEL-060", "accept_pids": ["W00743"], "category": "ev_charger", "nearest_m": 270.9}

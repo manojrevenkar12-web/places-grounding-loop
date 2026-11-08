@@ -1,0 +1,88 @@
+{"id": "DEV-001", "kind": "nearest_open", "now": {"day": 2, "hour": 21.5, "text": "Wednesday 21:30"}, "turns": ["Find a restaurant that is open now near Messehalle West."]}
+{"id": "DEV-002", "kind": "eta", "now": {"day": 1, "hour": 16, "text": "Tuesday 16:00"}, "turns": ["How long does it take to walk from Stadtpark Eingang Süd West to Bistro Linden on Mühlenstraße?"]}
+{"id": "DEV-003", "kind": "follow_up", "now": {"day": 3, "hour": 12.5, "text": "Thursday 12:30"}, "turns": ["Find a supermarket that is open now near Stadtpark Eingang Süd West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-004", "kind": "phone", "now": {"day": 4, "hour": 7.5, "text": "Friday 07:30"}, "turns": ["What is the phone number of Ladewerk on Schulstraße 31?"]}
+{"id": "DEV-005", "kind": "sparse", "now": {"day": 2, "hour": 9, "text": "Wednesday 09:00"}, "turns": ["Find a post office that is open now near Kulturhaus West."]}
+{"id": "DEV-006", "kind": "nearest_open", "now": {"day": 0, "hour": 19.5, "text": "Monday 19:30"}, "turns": ["Find a cafe that is open now near Busbahnhof."]}
+{"id": "DEV-007", "kind": "eta", "now": {"day": 4, "hour": 21.5, "text": "Friday 21:30"}, "turns": ["How long does it take to walk from Spreebrücke to Café Brunnen on Feldstraße?"]}
+{"id": "DEV-008", "kind": "follow_up", "now": {"day": 6, "hour": 23, "text": "Sunday 23:00"}, "turns": ["Find a pharmacy that is open now near Markthalle West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-009", "kind": "phone", "now": {"day": 0, "hour": 23, "text": "Monday 23:00"}, "turns": ["What is the phone number of Bohnenwerk on Birkenallee 115?"]}
+{"id": "DEV-010", "kind": "sparse", "now": {"day": 0, "hour": 16, "text": "Monday 16:00"}, "turns": ["Find a post office that is open now near Kirche am Markt."]}
+{"id": "DEV-011", "kind": "nearest_open", "now": {"day": 5, "hour": 16, "text": "Saturday 16:00"}, "turns": ["Find a cafe that is open now near Kulturhaus."]}
+{"id": "DEV-012", "kind": "eta", "now": {"day": 4, "hour": 19.5, "text": "Friday 19:30"}, "turns": ["How long does it take to walk from Nordbahnhof West to Postfiliale Kiez on Uferstraße?"]}
+{"id": "DEV-014", "kind": "phone", "now": {"day": 3, "hour": 19.5, "text": "Thursday 19:30"}, "turns": ["What is the phone number of Gesundpunkt Apotheke on Schulstraße 49?"]}
+{"id": "DEV-016", "kind": "nearest_open", "now": {"day": 5, "hour": 21.5, "text": "Saturday 21:30"}, "turns": ["Find a pharmacy that is open now near Rathausplatz."]}
+{"id": "DEV-017", "kind": "eta", "now": {"day": 6, "hour": 21.5, "text": "Sunday 21:30"}, "turns": ["How long does it take to walk from Busbahnhof to Gasthaus Bahnhof on Lindenstraße?"]}
+{"id": "DEV-018", "kind": "follow_up", "now": {"day": 2, "hour": 23, "text": "Wednesday 23:00"}, "turns": ["Find a supermarket that is open now near Stadtpark Eingang Süd West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-019", "kind": "phone", "now": {"day": 0, "hour": 12.5, "text": "Monday 12:30"}, "turns": ["What is the phone number of Kornfeld on Hafenweg 74?"]}
+{"id": "DEV-020", "kind": "sparse", "now": {"day": 2, "hour": 12.5, "text": "Wednesday 12:30"}, "turns": ["Find a fuel that is open now near Nordbahnhof West."]}
+{"id": "DEV-021", "kind": "nearest_open", "now": {"day": 1, "hour": 7.5, "text": "Tuesday 07:30"}, "turns": ["Find a supermarket that is open now near Zentralbibliothek West."]}
+{"id": "DEV-022", "kind": "eta", "now": {"day": 0, "hour": 19.5, "text": "Monday 19:30"}, "turns": ["How long does it take to walk from Spreebrücke West to Bäckerei Schulz on Kirchplatz?"]}
+{"id": "DEV-023", "kind": "follow_up", "now": {"day": 5, "hour": 16, "text": "Saturday 16:00"}, "turns": ["Find a pharmacy that is open now near Kirche am Markt.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-024", "kind": "phone", "now": {"day": 1, "hour": 23, "text": "Tuesday 23:00"}, "turns": ["What is the phone number of Bohnenwerk on Feldstraße 135?"]}
+{"id": "DEV-025", "kind": "sparse", "now": {"day": 1, "hour": 7.5, "text": "Tuesday 07:30"}, "turns": ["Find a fuel that is open now near Kirche am Markt."]}
+{"id": "DEV-026", "kind": "nearest_open", "now": {"day": 0, "hour": 16, "text": "Monday 16:00"}, "turns": ["Find a bakery that is open now near Rosengarten."]}
+{"id": "DEV-027", "kind": "eta", "now": {"day": 2, "hour": 19.5, "text": "Wednesday 19:30"}, "turns": ["How long does it take to walk from Messehalle West to Geldautomat Adlerbank on Wiesenstraße?"]}
+{"id": "DEV-028", "kind": "follow_up", "now": {"day": 4, "hour": 16, "text": "Friday 16:00"}, "turns": ["Find a bakery that is open now near Stadtpark Eingang Süd.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-029", "kind": "phone", "now": {"day": 2, "hour": 12.5, "text": "Wednesday 12:30"}, "turns": ["What is the phone number of Gesundpunkt Apotheke on Schulstraße 97?"]}
+{"id": "DEV-031", "kind": "nearest_open", "now": {"day": 1, "hour": 16, "text": "Tuesday 16:00"}, "turns": ["Find a restaurant that is open now near Kirche am Markt."]}
+{"id": "DEV-032", "kind": "eta", "now": {"day": 1, "hour": 9, "text": "Tuesday 09:00"}, "turns": ["How long does it take to walk from Stadtpark Eingang Süd West to Imbiss Neumann on Feldstraße?"]}
+{"id": "DEV-034", "kind": "phone", "now": {"day": 1, "hour": 23, "text": "Tuesday 23:00"}, "turns": ["What is the phone number of Gesundpunkt Apotheke on Bahnhofstraße 115?"]}
+{"id": "DEV-035", "kind": "sparse", "now": {"day": 0, "hour": 9, "text": "Monday 09:00"}, "turns": ["Find a fuel that is open now near Zentralbibliothek West."]}
+{"id": "DEV-036", "kind": "nearest_open", "now": {"day": 2, "hour": 19.5, "text": "Wednesday 19:30"}, "turns": ["Find a restaurant that is open now near Kulturhaus."]}
+{"id": "DEV-037", "kind": "eta", "now": {"day": 0, "hour": 12.5, "text": "Monday 12:30"}, "turns": ["How long does it take to walk from Seebad to Bistro Turm on Kirchplatz?"]}
+{"id": "DEV-038", "kind": "follow_up", "now": {"day": 5, "hour": 7.5, "text": "Saturday 07:30"}, "turns": ["Find a cafe that is open now near Rosengarten.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-039", "kind": "phone", "now": {"day": 4, "hour": 16, "text": "Friday 16:00"}, "turns": ["What is the phone number of Gesundpunkt Apotheke on Rosenstraße 91?"]}
+{"id": "DEV-041", "kind": "nearest_open", "now": {"day": 3, "hour": 12.5, "text": "Thursday 12:30"}, "turns": ["Find a restaurant that is open now near Kunsthalle."]}
+{"id": "DEV-042", "kind": "eta", "now": {"day": 2, "hour": 12.5, "text": "Wednesday 12:30"}, "turns": ["How long does it take to walk from Stadtpark Eingang Süd to Café Brunnen on Uferstraße?"]}
+{"id": "DEV-044", "kind": "phone", "now": {"day": 4, "hour": 12.5, "text": "Friday 12:30"}, "turns": ["What is the phone number of Kaufgut on Kastanienweg 61?"]}
+{"id": "DEV-045", "kind": "sparse", "now": {"day": 5, "hour": 7.5, "text": "Saturday 07:30"}, "turns": ["Find a ev charger that is open now near Rathausplatz."]}
+{"id": "DEV-046", "kind": "nearest_open", "now": {"day": 3, "hour": 9, "text": "Thursday 09:00"}, "turns": ["Find a cafe that is open now near Rosengarten."]}
+{"id": "DEV-047", "kind": "eta", "now": {"day": 3, "hour": 16, "text": "Thursday 16:00"}, "turns": ["How long does it take to walk from Busbahnhof to Postfiliale Brunnen on Kirchplatz?"]}
+{"id": "DEV-048", "kind": "follow_up", "now": {"day": 6, "hour": 7.5, "text": "Sunday 07:30"}, "turns": ["Find a supermarket that is open now near Rosengarten.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-049", "kind": "phone", "now": {"day": 4, "hour": 7.5, "text": "Friday 07:30"}, "turns": ["What is the phone number of Bohnenwerk on Kirchplatz 27?"]}
+{"id": "DEV-051", "kind": "nearest_open", "now": {"day": 5, "hour": 21.5, "text": "Saturday 21:30"}, "turns": ["Find a supermarket that is open now near Stadtpark Eingang Süd West."]}
+{"id": "DEV-052", "kind": "eta", "now": {"day": 0, "hour": 21.5, "text": "Monday 21:30"}, "turns": ["How long does it take to walk from Kunsthalle to Café Sonnen on Bahnhofstraße?"]}
+{"id": "DEV-053", "kind": "follow_up", "now": {"day": 0, "hour": 23, "text": "Monday 23:00"}, "turns": ["Find a pharmacy that is open now near Seebad.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-054", "kind": "phone", "now": {"day": 3, "hour": 19.5, "text": "Thursday 19:30"}, "turns": ["What is the phone number of Bohnenwerk on Rosenstraße 96?"]}
+{"id": "DEV-055", "kind": "sparse", "now": {"day": 6, "hour": 7.5, "text": "Sunday 07:30"}, "turns": ["Find a fuel that is open now near Markthalle West."]}
+{"id": "DEV-056", "kind": "nearest_open", "now": {"day": 1, "hour": 12.5, "text": "Tuesday 12:30"}, "turns": ["Find a bakery that is open now near Stadtpark Eingang Süd West."]}
+{"id": "DEV-057", "kind": "eta", "now": {"day": 4, "hour": 19.5, "text": "Friday 19:30"}, "turns": ["How long does it take to walk from Messehalle West to Postfiliale Bahnhof on Waldstraße?"]}
+{"id": "DEV-058", "kind": "follow_up", "now": {"day": 4, "hour": 19.5, "text": "Friday 19:30"}, "turns": ["Find a supermarket that is open now near Busbahnhof.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-059", "kind": "phone", "now": {"day": 0, "hour": 16, "text": "Monday 16:00"}, "turns": ["What is the phone number of Tankpunkt on Gartenweg 37?"]}
+{"id": "DEV-061", "kind": "nearest_open", "now": {"day": 5, "hour": 7.5, "text": "Saturday 07:30"}, "turns": ["Find a bakery that is open now near Seebad."]}
+{"id": "DEV-062", "kind": "eta", "now": {"day": 5, "hour": 9, "text": "Saturday 09:00"}, "turns": ["How long does it take to walk from Rathausplatz West to Tankstelle Weber on Hafenweg?"]}
+{"id": "DEV-063", "kind": "follow_up", "now": {"day": 2, "hour": 9, "text": "Wednesday 09:00"}, "turns": ["Find a pharmacy that is open now near Spreebrücke West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-064", "kind": "phone", "now": {"day": 3, "hour": 19.5, "text": "Thursday 19:30"}, "turns": ["What is the phone number of Bohnenwerk on Brückenstraße 75?"]}
+{"id": "DEV-065", "kind": "sparse", "now": {"day": 1, "hour": 7.5, "text": "Tuesday 07:30"}, "turns": ["Find a fuel that is open now near Messehalle West."]}
+{"id": "DEV-066", "kind": "nearest_open", "now": {"day": 3, "hour": 9, "text": "Thursday 09:00"}, "turns": ["Find a bakery that is open now near Nordbahnhof West."]}
+{"id": "DEV-067", "kind": "eta", "now": {"day": 1, "hour": 7.5, "text": "Tuesday 07:30"}, "turns": ["How long does it take to walk from Kulturhaus to Ladestation Mühlenstraße on Mühlenstraße?"]}
+{"id": "DEV-069", "kind": "phone", "now": {"day": 2, "hour": 9, "text": "Wednesday 09:00"}, "turns": ["What is the phone number of Bohnenwerk on Parkallee 27?"]}
+{"id": "DEV-071", "kind": "nearest_open", "now": {"day": 4, "hour": 16, "text": "Friday 16:00"}, "turns": ["Find a supermarket that is open now near Kunsthalle."]}
+{"id": "DEV-072", "kind": "eta", "now": {"day": 6, "hour": 21.5, "text": "Sunday 21:30"}, "turns": ["How long does it take to walk from Zentralbibliothek West to Bäckerei Weber on Brunnenstraße?"]}
+{"id": "DEV-073", "kind": "follow_up", "now": {"day": 3, "hour": 23, "text": "Thursday 23:00"}, "turns": ["Find a pharmacy that is open now near Kulturhaus West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-074", "kind": "phone", "now": {"day": 3, "hour": 19.5, "text": "Thursday 19:30"}, "turns": ["What is the phone number of Gesundpunkt Apotheke on Rosenstraße 21?"]}
+{"id": "DEV-075", "kind": "sparse", "now": {"day": 5, "hour": 16, "text": "Saturday 16:00"}, "turns": ["Find a fuel that is open now near Zentralbibliothek West."]}
+{"id": "DEV-076", "kind": "nearest_open", "now": {"day": 0, "hour": 19.5, "text": "Monday 19:30"}, "turns": ["Find a restaurant that is open now near Stadtpark Eingang Süd."]}
+{"id": "DEV-077", "kind": "eta", "now": {"day": 2, "hour": 23, "text": "Wednesday 23:00"}, "turns": ["How long does it take to walk from Rathausplatz West to Krüger Lebensmittel on Brückenstraße?"]}
+{"id": "DEV-078", "kind": "follow_up", "now": {"day": 6, "hour": 16, "text": "Sunday 16:00"}, "turns": ["Find a bakery that is open now near Nordbahnhof West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-079", "kind": "phone", "now": {"day": 1, "hour": 9, "text": "Tuesday 09:00"}, "turns": ["What is the phone number of Bohnenwerk on Am Markt 125?"]}
+{"id": "DEV-080", "kind": "sparse", "now": {"day": 6, "hour": 19.5, "text": "Sunday 19:30"}, "turns": ["Find a ev charger that is open now near Kirche am Markt."]}
+{"id": "DEV-081", "kind": "nearest_open", "now": {"day": 3, "hour": 7.5, "text": "Thursday 07:30"}, "turns": ["Find a supermarket that is open now near Rosengarten."]}
+{"id": "DEV-082", "kind": "eta", "now": {"day": 2, "hour": 16, "text": "Wednesday 16:00"}, "turns": ["How long does it take to walk from Stadtpark Eingang Süd West to Café Wiesen on Wiesenstraße?"]}
+{"id": "DEV-083", "kind": "follow_up", "now": {"day": 3, "hour": 23, "text": "Thursday 23:00"}, "turns": ["Find a restaurant that is open now near Rathausplatz West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-084", "kind": "phone", "now": {"day": 1, "hour": 9, "text": "Tuesday 09:00"}, "turns": ["What is the phone number of Gesundpunkt Apotheke on Gartenweg 104?"]}
+{"id": "DEV-085", "kind": "sparse", "now": {"day": 6, "hour": 21.5, "text": "Sunday 21:30"}, "turns": ["Find a fuel that is open now near Stadtpark Eingang Süd."]}
+{"id": "DEV-086", "kind": "nearest_open", "now": {"day": 3, "hour": 16, "text": "Thursday 16:00"}, "turns": ["Find a restaurant that is open now near Markthalle West."]}
+{"id": "DEV-087", "kind": "eta", "now": {"day": 2, "hour": 16, "text": "Wednesday 16:00"}, "turns": ["How long does it take to walk from Rosengarten to Bäckerei Wagner on Ahornweg?"]}
+{"id": "DEV-088", "kind": "follow_up", "now": {"day": 3, "hour": 16, "text": "Thursday 16:00"}, "turns": ["Find a cafe that is open now near Messehalle West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-089", "kind": "phone", "now": {"day": 6, "hour": 9, "text": "Sunday 09:00"}, "turns": ["What is the phone number of Bohnenwerk on Birkenallee 50?"]}
+{"id": "DEV-090", "kind": "sparse", "now": {"day": 2, "hour": 19.5, "text": "Wednesday 19:30"}, "turns": ["Find a ev charger that is open now near Kulturhaus."]}
+{"id": "DEV-091", "kind": "nearest_open", "now": {"day": 5, "hour": 12.5, "text": "Saturday 12:30"}, "turns": ["Find a cafe that is open now near Stadtpark Eingang Süd West."]}
+{"id": "DEV-092", "kind": "eta", "now": {"day": 6, "hour": 23, "text": "Sunday 23:00"}, "turns": ["How long does it take to walk from Rathausplatz West to Café Stern on Am Markt?"]}
+{"id": "DEV-093", "kind": "follow_up", "now": {"day": 4, "hour": 12.5, "text": "Friday 12:30"}, "turns": ["Find a pharmacy that is open now near Rathausplatz.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-094", "kind": "phone", "now": {"day": 6, "hour": 9, "text": "Sunday 09:00"}, "turns": ["What is the phone number of Kornfeld on Mühlenstraße 98?"]}
+{"id": "DEV-097", "kind": "eta", "now": {"day": 4, "hour": 7.5, "text": "Friday 07:30"}, "turns": ["How long does it take to walk from Rathausplatz to Bäckerei Neumann on Feldstraße?"]}
+{"id": "DEV-098", "kind": "follow_up", "now": {"day": 4, "hour": 9, "text": "Friday 09:00"}, "turns": ["Find a supermarket that is open now near Messehalle West.", "Is it still open now?"], "event_after_turn": 1}
+{"id": "DEV-099", "kind": "phone", "now": {"day": 4, "hour": 7.5, "text": "Friday 07:30"}, "turns": ["What is the phone number of Kaufgut on Brunnenstraße 41?"]}
+{"id": "DEV-100", "kind": "sparse", "now": {"day": 4, "hour": 16, "text": "Friday 16:00"}, "turns": ["Find a fuel that is open now near Markthalle West."]}

@@ -1,0 +1,88 @@
+{"id": "DEV-001", "accept_pids": ["W00386", "W00919"], "category": "restaurant", "nearest_m": 611.8}
+{"id": "DEV-002", "accept_pids": ["W00023"], "eta_min": 73.9}
+{"id": "DEV-003", "accept_pids": ["W01393", "W00366", "W00083", "W00115", "N00059"], "category": "supermarket", "nearest_m": 1156.8}
+{"id": "DEV-004", "accept_pids": ["W00368"], "phone": "+49 30 1416144"}
+{"id": "DEV-005", "accept_pids": ["W01335"], "category": "post_office", "nearest_m": 194.0}
+{"id": "DEV-006", "accept_pids": ["W00480", "W00148"], "category": "cafe", "nearest_m": 947.5}
+{"id": "DEV-007", "accept_pids": ["W00657"], "eta_min": 146.6}
+{"id": "DEV-008", "accept_pids": ["W00954", "W00767", "W00007"], "category": "pharmacy", "nearest_m": 533.2}
+{"id": "DEV-009", "accept_pids": ["W01304"], "phone": "+49 30 8464280"}
+{"id": "DEV-010", "accept_pids": ["W00776", "W00668"], "category": "post_office", "nearest_m": 2229.1}
+{"id": "DEV-011", "accept_pids": ["W00878", "W00324"], "category": "cafe", "nearest_m": 794.1}
+{"id": "DEV-012", "accept_pids": ["W00306"], "eta_min": 34.5}
+{"id": "DEV-014", "accept_pids": ["W01080"], "phone": "+49 30 3915544"}
+{"id": "DEV-016", "accept_pids": ["W01181"], "category": "pharmacy", "nearest_m": 1298.5}
+{"id": "DEV-017", "accept_pids": ["W00494"], "eta_min": 86.1}
+{"id": "DEV-018", "accept_pids": ["W01393", "W00366", "N00059"], "category": "supermarket", "nearest_m": 1156.8}
+{"id": "DEV-019", "accept_pids": ["W00577"], "phone": "+49 30 7529872"}
+{"id": "DEV-020", "accept_pids": ["W00259", "W00634"], "category": "fuel", "nearest_m": 907.7}
+{"id": "DEV-021", "accept_pids": ["W00652"], "category": "supermarket", "nearest_m": 1363.9}
+{"id": "DEV-022", "accept_pids": ["W00050"], "eta_min": 62.0}
+{"id": "DEV-023", "accept_pids": ["W01382"], "category": "pharmacy", "nearest_m": 169.8}
+{"id": "DEV-024", "accept_pids": ["W00218"], "phone": "+49 30 7110967"}
+{"id": "DEV-025", "accept_pids": ["W00551"], "category": "fuel", "nearest_m": 85.9}
+{"id": "DEV-026", "accept_pids": ["W00625", "W01398"], "category": "bakery", "nearest_m": 973.8}
+{"id": "DEV-027", "accept_pids": ["W01286"], "eta_min": 63.9}
+{"id": "DEV-028", "accept_pids": ["W00430", "W00714"], "category": "bakery", "nearest_m": 440.2}
+{"id": "DEV-029", "accept_pids": ["W01183"], "phone": "+49 30 4407663"}
+{"id": "DEV-031", "accept_pids": ["W01107"], "category": "restaurant", "nearest_m": 656.1}
+{"id": "DEV-032", "accept_pids": ["W00415"], "eta_min": 71.8}
+{"id": "DEV-034", "accept_pids": ["W00024"], "phone": "+49 30 7185475"}
+{"id": "DEV-035", "accept_pids": ["W01366"], "category": "fuel", "nearest_m": 757.6}
+{"id": "DEV-036", "accept_pids": ["W00168", "W00399", "W00783"], "category": "restaurant", "nearest_m": 349.4}
+{"id": "DEV-037", "accept_pids": ["W01346"], "eta_min": 160.2}
+{"id": "DEV-038", "accept_pids": ["W00572"], "category": "cafe", "nearest_m": 682.7}
+{"id": "DEV-039", "accept_pids": ["W01266"], "phone": "+49 30 9184377"}
+{"id": "DEV-041", "accept_pids": ["W01129", "W00316", "W00066", "W00818", "W00264"], "category": "restaurant", "nearest_m": 765.1}
+{"id": "DEV-042", "accept_pids": ["W01031"], "eta_min": 154.2}
+{"id": "DEV-044", "accept_pids": ["W00068"], "phone": "+49 30 9533060"}
+{"id": "DEV-045", "accept_pids": ["W01220", "W01308", "W00912", "W00654", "W00602", "W00313", "W00418"], "category": "ev_charger", "nearest_m": 1582.7}
+{"id": "DEV-046", "accept_pids": ["W00572", "W00232", "N00025", "W00946"], "category": "cafe", "nearest_m": 682.7}
+{"id": "DEV-047", "accept_pids": ["W00113"], "eta_min": 138.1}
+{"id": "DEV-048", "accept_pids": ["W00039", "W00995"], "category": "supermarket", "nearest_m": 1429.5}
+{"id": "DEV-049", "accept_pids": ["W01050"], "phone": "+49 30 6779100"}
+{"id": "DEV-051", "accept_pids": ["W01393", "W00366", "W00083", "N00059"], "category": "supermarket", "nearest_m": 1156.8}
+{"id": "DEV-052", "accept_pids": ["N00037"], "eta_min": 135.6}
+{"id": "DEV-053", "accept_pids": ["W00892", "W00358", "N00016", "W01284"], "category": "pharmacy", "nearest_m": 1500.9}
+{"id": "DEV-054", "accept_pids": ["W00521"], "phone": "+49 30 7091646"}
+{"id": "DEV-055", "accept_pids": ["W00662"], "category": "fuel", "nearest_m": 604.2}
+{"id": "DEV-056", "accept_pids": ["W00226", "W01127", "W00304"], "category": "bakery", "nearest_m": 321.8}
+{"id": "DEV-057", "accept_pids": ["W00237"], "eta_min": 55.6}
+{"id": "DEV-058", "accept_pids": ["W01154"], "category": "supermarket", "nearest_m": 309.5}
+{"id": "DEV-059", "accept_pids": ["W00915"], "phone": "+49 30 8356295"}
+{"id": "DEV-061", "accept_pids": ["W01159", "W00858", "W00411", "W00449", "W00745"], "category": "bakery", "nearest_m": 960.8}
+{"id": "DEV-062", "accept_pids": ["W01366"], "eta_min": 132.0}
+{"id": "DEV-063", "accept_pids": ["W00980", "W01245"], "category": "pharmacy", "nearest_m": 282.9}
+{"id": "DEV-064", "accept_pids": ["W01126"], "phone": "+49 30 5951273"}
+{"id": "DEV-065", "accept_pids": ["W00634"], "category": "fuel", "nearest_m": 261.8}
+{"id": "DEV-066", "accept_pids": ["W01187"], "category": "bakery", "nearest_m": 119.1}
+{"id": "DEV-067", "accept_pids": ["W00705"], "eta_min": 33.0}
+{"id": "DEV-069", "accept_pids": ["W01353"], "phone": "+49 30 1020258"}
+{"id": "DEV-071", "accept_pids": ["W00297", "W00068", "W00995", "W00385"], "category": "supermarket", "nearest_m": 1327.1}
+{"id": "DEV-072", "accept_pids": ["W00477"], "eta_min": 157.0}
+{"id": "DEV-073", "accept_pids": ["W00812", "W01033", "W00516", "W00730"], "category": "pharmacy", "nearest_m": 1112.8}
+{"id": "DEV-074", "accept_pids": ["W01022"], "phone": "+49 30 5876534"}
+{"id": "DEV-075", "accept_pids": ["W01366"], "category": "fuel", "nearest_m": 757.6}
+{"id": "DEV-076", "accept_pids": ["W01137", "W00224", "W00276"], "category": "restaurant", "nearest_m": 318.5}
+{"id": "DEV-077", "accept_pids": ["W00035"], "eta_min": 6.1}
+{"id": "DEV-078", "accept_pids": ["W00819"], "category": "bakery", "nearest_m": 863.8}
+{"id": "DEV-079", "accept_pids": ["W01254"], "phone": "+49 30 9248555"}
+{"id": "DEV-080", "accept_pids": ["W00499", "W01356", "W01355", "W00183"], "category": "ev_charger", "nearest_m": 919.5}
+{"id": "DEV-081", "accept_pids": ["W00039", "N00058", "W00995", "W00519", "W00112", "W00031"], "category": "supermarket", "nearest_m": 1429.5}
+{"id": "DEV-082", "accept_pids": ["W01262"], "eta_min": 32.1}
+{"id": "DEV-083", "accept_pids": ["W01209", "W00019", "W00432", "W00345", "W00336"], "category": "restaurant", "nearest_m": 737.9}
+{"id": "DEV-084", "accept_pids": ["W00659"], "phone": "+49 30 1748574"}
+{"id": "DEV-085", "accept_pids": ["W01178"], "category": "fuel", "nearest_m": 763.2}
+{"id": "DEV-086", "accept_pids": ["N00047"], "category": "restaurant", "nearest_m": 388.6}
+{"id": "DEV-087", "accept_pids": ["W00742"], "eta_min": 118.6}
+{"id": "DEV-088", "accept_pids": ["W00688", "W00157"], "category": "cafe", "nearest_m": 611.2}
+{"id": "DEV-089", "accept_pids": ["W00648"], "phone": "+49 30 2339297"}
+{"id": "DEV-090", "accept_pids": ["W01147", "W01376", "W00704", "W00705", "W00183", "W00994"], "category": "ev_charger", "nearest_m": 1670.5}
+{"id": "DEV-091", "accept_pids": ["W00093"], "category": "cafe", "nearest_m": 342.8}
+{"id": "DEV-092", "accept_pids": ["W00398"], "eta_min": 74.5}
+{"id": "DEV-093", "accept_pids": ["W01181", "W00597", "W00814"], "category": "pharmacy", "nearest_m": 1298.5}
+{"id": "DEV-094", "accept_pids": ["W00514"], "phone": "+49 30 6528108"}
+{"id": "DEV-097", "accept_pids": ["W00714"], "eta_min": 117.2}
+{"id": "DEV-098", "accept_pids": ["W00298"], "category": "supermarket", "nearest_m": 205.8}
+{"id": "DEV-099", "accept_pids": ["W00298"], "phone": "+49 30 9064364"}
+{"id": "DEV-100", "accept_pids": ["W00662"], "category": "fuel", "nearest_m": 604.2}

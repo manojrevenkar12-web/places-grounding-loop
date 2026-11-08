@@ -1,0 +1,94 @@
+# places-grounding-loop settings. Loaded strictly. Every number in the synthetic world is invented for this project.
+
+[run]
+seed = 20261108
+repeats = 3
+
+[world]
+seed = 11
+# a Berlin-sized box; development places are west of the split, held-out places east of it
+lat_min = 52.45
+lat_max = 52.58
+lon_min = 13.28
+lon_max = 13.52
+heldout_lon_split = 13.43
+places = 1400
+shared_building_share = 0.08   # places that share a building with another of the same category
+chain_share = 0.12             # places belonging to a chain with one name across many locations
+
+[sources.community]      # an open, volunteer-mapped source
+coverage = 0.85
+coord_noise_m = 6
+hours_share = 0.5
+stale_hours_share = 0.25
+name_variant_share = 0.15
+
+[sources.partner]        # a commercial feed, geocoded from addresses
+coverage = 0.75
+coord_noise_m = 45
+hours_share = 0.9
+stale_hours_share = 0.05
+name_variant_share = 0.45
+phone_share = 0.8
+rekey_share = 0.10       # share of partner records that get a new partner key at the next delivery
+
+[sources.feedback]
+reports = 260
+false_report_share = 0.2
+
+[changes]
+# what happens in the world between release 1 and release 2
+closures = 70
+openings = 60
+hours_changes = 140
+
+[pipeline]
+cell_m = 120                 # blocking grid; a record is compared with records in its cell and the 8 neighbours
+max_distance_m = 250
+match_threshold = 0.5        # match probability above which two records are the same place
+closure_corroboration = 2    # independent signals needed to close a place
+coord_prefer_community_m = 60
+
+[model]
+latency_ms = 700
+latency_spread = 0.3
+ms_per_1k_in = 220
+price_in = 0.0025
+price_out = 0.010
+small_latency_ms = 240
+small_ms_per_1k_in = 60
+small_price_in = 0.0002
+small_price_out = 0.0006
+hallucinate_argument = 0.08   # invents coordinates or a place id instead of using a tool's
+reuse_stale = 0.6             # answers a follow-up from details fetched earlier
+ignore_partial = 0.7          # reports a partial result as complete
+repeat_on_empty = 0.5         # repeats the same search when it finds nothing
+small_extra_error = 0.04      # added to each rate on the small model
+
+[harness]
+max_steps = 8
+widen_radius_factor = 2.0
+
+[tools]
+latency_ms = 90
+latency_spread = 0.4
+search_failure = 0.06     # one of the search shards times out; the result is partial
+route_speed_walk_kmh = 4.8
+route_speed_drive_kmh = 24
+detour_factor = 1.3
+
+[tokens]
+system = 500
+per_tool_schema = 90
+per_result = 60
+answer = 120
+action = 50
+
+[targets]
+p95_latency_ms = 4000
+cost_per_request_eur = 0.01
+
+[eval]
+bootstrap = 2000
+alpha = 0.05
+gate_max_drop = 0.02   # a change may not lower task success by more than this, by the lower bound of the paired difference
