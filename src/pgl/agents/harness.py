@@ -31,25 +31,33 @@ SEARCHES = ("search_forward", "category_search")
 
 @dataclass(frozen=True)
 class Guards:
-    style: str = "react"            # react | plan
+    style: str = "react"  # react | plan
     provenance: bool = True
     freshness: bool = True
     partial_retry: bool = True
     loop_guard: bool = True
     ambiguity: bool = True
     step_budget: bool = True
-    cache: str = "versioned"        # off | versioned | unversioned
-    routing: str = "by_type"        # large | by_type | small
+    cache: str = "versioned"  # off | versioned | unversioned
+    routing: str = "by_type"  # large | by_type | small
     streaming: bool = True
 
 
-PLAIN = Guards(provenance=False, freshness=False, partial_retry=False, loop_guard=False, ambiguity=False,
-               step_budget=False,
-               cache="off", routing="large", streaming=False)
+PLAIN = Guards(
+    provenance=False,
+    freshness=False,
+    partial_retry=False,
+    loop_guard=False,
+    ambiguity=False,
+    step_budget=False,
+    cache="off",
+    routing="large",
+    streaming=False,
+)
 GUARDED = Guards()
 PLAN_FETCH = Guards(style="plan")
 HARNESSES = {"plain": PLAIN, "guarded": GUARDED, "plan_fetch": PLAN_FETCH}
-CHANGES = {   # changes put through the gate, each against the harness it would replace
+CHANGES = {  # changes put through the gate, each against the harness it would replace
     "add the guards": ("plain", GUARDED),
     "plan then fetch": ("guarded", PLAN_FETCH),
     "drop the freshness check (one status call less per turn)": ("plan_fetch", replace(PLAN_FETCH, freshness=False)),
@@ -76,7 +84,7 @@ class Meter:
     model_calls: int = 0
     tool_calls: int = 0
     cache_hits: int = 0
-    trips: dict = field(default_factory=dict)   # guard -> times it fired
+    trips: dict = field(default_factory=dict)  # guard -> times it fired
     turn_ms: list = field(default_factory=list)  # time until the user sees each answer start
 
     def trip(self, name: str) -> None:
@@ -99,7 +107,7 @@ class Agent:
         base, per_k = (md.small_latency_ms, md.small_ms_per_1k_in) if small else (md.latency_ms, md.ms_per_1k_in)
         pin, pout = (md.small_price_in, md.small_price_out) if small else (md.price_in, md.price_out)
         m.latency_ms += base * self._jitter(rng, md.latency_spread) + per_k * tin / 1000
-        if out_tokens == self.s.tokens.answer and not self.g.streaming:   # the user waits for the whole answer
+        if out_tokens == self.s.tokens.answer and not self.g.streaming:  # the user waits for the whole answer
             m.latency_ms += out_tokens / (md.small_tokens_per_s if small else md.tokens_per_s) * 1000
         m.cost_eur += tin / 1000 * pin + out_tokens / 1000 * pout
         m.model_calls += 1
@@ -108,7 +116,9 @@ class Agent:
         return self.s.tools.latency_ms * self._jitter(rng, self.s.tools.latency_spread)
 
     # ---- tools ----
-    def _run_tool(self, tool: str, args: dict, version: int | None, m: Meter, rng: random.Random) -> tuple[dict | None, str | None, float]:
+    def _run_tool(
+        self, tool: str, args: dict, version: int | None, m: Meter, rng: random.Random
+    ) -> tuple[dict | None, str | None, float]:
         """Executes one call (through the cache, with partial retries). Returns result, error, latency."""
         key = None
         if self.g.cache != "off" and tool != "status":
@@ -171,15 +181,23 @@ class Agent:
                 if h.get("kind") != "place":
                     continue
                 used = args.get("place_id") == h["place_id"] or (
-                    "to_lat" in args and (args["to_lat"], args["to_lon"]) == (h["lat"], h["lon"]))
+                    "to_lat" in args and (args["to_lat"], args["to_lon"]) == (h["lat"], h["lon"])
+                )
                 if used and len(same_as(h, hits, o.args["query"])) > 1:
                     return True
         return False
 
     @staticmethod
     def _dup_empty(ctx: Context, tool: str, args: dict) -> bool:
-        return any(o.tool == tool and o.args == args and o.turn == ctx.turn and o.result is not None
-                   and o.result.get("complete", True) and not o.result.get("results", [1]) for o in ctx.obs)
+        return any(
+            o.tool == tool
+            and o.args == args
+            and o.turn == ctx.turn
+            and o.result is not None
+            and o.result.get("complete", True)
+            and not o.result.get("results", [1])
+            for o in ctx.obs
+        )
 
     def _check(self, ctx: Context, call: dict, m: Meter) -> Obs | None:
         """The guards before a call runs. Returns the note that replaces the call, or None to run it."""
@@ -190,12 +208,22 @@ class Agent:
                 return Obs(call["tool"], call["args"], error=why, note="ungrounded", turn=ctx.turn)
         if self.g.ambiguity and self._ambiguous(ctx, call["args"]):
             m.trip("ambiguity")
-            return Obs(call["tool"], call["args"], error="several places match the request equally; ask which",
-                       note="ambiguous", turn=ctx.turn)
+            return Obs(
+                call["tool"],
+                call["args"],
+                error="several places match the request equally; ask which",
+                note="ambiguous",
+                turn=ctx.turn,
+            )
         if self.g.loop_guard and self._dup_empty(ctx, call["tool"], call["args"]):
             m.trip("loop_guard")
-            return Obs(call["tool"], call["args"], error="this exact call already returned nothing; change it",
-                       note="duplicate_empty", turn=ctx.turn)
+            return Obs(
+                call["tool"],
+                call["args"],
+                error="this exact call already returned nothing; change it",
+                note="duplicate_empty",
+                turn=ctx.turn,
+            )
         return None
 
     def _execute(self, ctx: Context, call: dict, version: int | None, m: Meter, rng: random.Random) -> Obs:
@@ -217,8 +245,7 @@ class Agent:
                 if stale:
                     m.trip("freshness")
                     ctx.obs = [o for o in ctx.obs if o not in stale]
-                    ctx.add(Obs("status", {}, result={"data_version": version}, note="data_changed",
-                                       turn=ctx.turn))
+                    ctx.add(Obs("status", {}, result={"data_version": version}, note="data_changed", turn=ctx.turn))
         budget = self.s.harness.max_steps if self.g.step_budget else self.s.harness.plain_max_steps
         steps = 0
         if self.g.style == "plan":
@@ -231,11 +258,19 @@ class Agent:
                 ans = act["answer"]
                 if self.g.provenance and ans.get("place_id") and ans["place_id"] not in self._grounded(ctx)[1]:
                     m.trip("provenance")
-                    ctx.add(Obs("answer", ans, error="the answer names a place no tool returned",
-                                       note="ungrounded", turn=ctx.turn))
+                    ctx.add(
+                        Obs(
+                            "answer",
+                            ans,
+                            error="the answer names a place no tool returned",
+                            note="ungrounded",
+                            turn=ctx.turn,
+                        )
+                    )
                     continue
-                if self.g.partial_retry and any(o.note == "partial_after_retries" and o.turn == ctx.turn
-                                                for o in ctx.obs):
+                if self.g.partial_retry and any(
+                    o.note == "partial_after_retries" and o.turn == ctx.turn for o in ctx.obs
+                ):
                     ans = dict(ans, partial=True)
                 return dict(ans, steps=steps)
             note = self._check(ctx, act, m)
@@ -249,8 +284,9 @@ class Agent:
             return None if hit is None else hit.get(f)
         return v
 
-    def _plan_turn(self, ctx: Context, model: SimulatedModel, small: bool, rng: random.Random, m: Meter,
-                   version: int | None) -> int:
+    def _plan_turn(
+        self, ctx: Context, model: SimulatedModel, small: bool, rng: random.Random, m: Meter, version: int | None
+    ) -> int:
         """Runs plans until one completes or the replans run out. Returns the steps used (one per model call)."""
         used = 0
         for _ in range(3):
@@ -260,18 +296,37 @@ class Agent:
             if not plan:
                 return used
             if self.g.provenance:
-                lit = [st for st in plan if self._ungrounded(ctx, {k: v for k, v in st["args"].items()
-                                                                   if not (isinstance(v, str) and v.startswith("$"))})]
+                lit = [
+                    st
+                    for st in plan
+                    if self._ungrounded(
+                        ctx, {k: v for k, v in st["args"].items() if not (isinstance(v, str) and v.startswith("$"))}
+                    )
+                ]
                 if lit:
                     m.trip("provenance")
-                    ctx.add(Obs(lit[0]["tool"], lit[0]["args"], error="plan uses arguments no tool returned",
-                                       note="ungrounded", turn=ctx.turn))
+                    ctx.add(
+                        Obs(
+                            lit[0]["tool"],
+                            lit[0]["args"],
+                            error="plan uses arguments no tool returned",
+                            note="ungrounded",
+                            turn=ctx.turn,
+                        )
+                    )
                     continue
             picks, done, ok = {}, set(), True
             while len(done) < len(plan) and ok:
-                wave = [i for i, st in enumerate(plan) if i not in done and all(
-                    int(v[1:].split(".")[0]) in done for v in st["args"].values()
-                    if isinstance(v, str) and v.startswith("$"))]
+                wave = [
+                    i
+                    for i, st in enumerate(plan)
+                    if i not in done
+                    and all(
+                        int(v[1:].split(".")[0]) in done
+                        for v in st["args"].values()
+                        if isinstance(v, str) and v.startswith("$")
+                    )
+                ]
                 if not wave:
                     ok = False
                     break
@@ -295,12 +350,19 @@ class Agent:
                     m.latency_ms = before
                     ctx.add(o)
                     widen = st.get("on_empty")
-                    while (widen and o.result is not None and o.result.get("results") == [] and o.result["complete"]
-                           and call["args"]["radius_m"] * widen["widen"] <= widen["max_radius_m"]):
+                    while (
+                        widen
+                        and o.result is not None
+                        and o.result.get("results") == []
+                        and o.result["complete"]
+                        and call["args"]["radius_m"] * widen["widen"] <= widen["max_radius_m"]
+                    ):
                         # the plan says what to do when nothing is found, so no model round trip is needed
                         m.trip("plan_widen")
-                        call = {"tool": call["tool"], "args": dict(call["args"],
-                                                                   radius_m=call["args"]["radius_m"] * widen["widen"])}
+                        call = {
+                            "tool": call["tool"],
+                            "args": dict(call["args"], radius_m=call["args"]["radius_m"] * widen["widen"]),
+                        }
                         o = self._execute(ctx, call, version, m, rng)
                         ctx.add(o)
                     hits = (o.result or {}).get("results")
@@ -328,8 +390,9 @@ def run_task(agent: Agent, task: dict, s: Settings, seed: int, on_turn=None) -> 
     answers = []
     for i, text in enumerate(task["turns"]):
         ctx.text, ctx.turn = text, i
-        small = agent.g.routing == "small" or (agent.g.routing == "by_type"
-                                               and request_type(text) in s.harness.route_small)
+        small = agent.g.routing == "small" or (
+            agent.g.routing == "by_type" and request_type(text) in s.harness.route_small
+        )
         model = SimulatedModel(s, random.Random(seed * 31 + i), small=small)
         before = m.latency_ms
         ans = agent.turn(ctx, model, small, rng, m)
@@ -339,8 +402,27 @@ def run_task(agent: Agent, task: dict, s: Settings, seed: int, on_turn=None) -> 
             ctx.memory["place_id"] = ans["place_id"]
         if on_turn:
             on_turn(i, ans)
-    trace = [{"turn": o.turn, "tool": o.tool, "args": o.args, "note": o.note, "error": o.error,
-              "complete": (o.result or {}).get("complete"), "empty": o.result is not None and o.result.get("results") == [],
-              "result": o.result} for o in ctx.log]
-    return {"answers": answers, "trace": trace, "latency_ms": round(m.latency_ms, 1), "turn_ms": m.turn_ms, "cost_eur": round(m.cost_eur, 6),
-            "model_calls": m.model_calls, "tool_calls": m.tool_calls, "cache_hits": m.cache_hits, "trips": m.trips}
+    trace = [
+        {
+            "turn": o.turn,
+            "tool": o.tool,
+            "args": o.args,
+            "note": o.note,
+            "error": o.error,
+            "complete": (o.result or {}).get("complete"),
+            "empty": o.result is not None and o.result.get("results") == [],
+            "result": o.result,
+        }
+        for o in ctx.log
+    ]
+    return {
+        "answers": answers,
+        "trace": trace,
+        "latency_ms": round(m.latency_ms, 1),
+        "turn_ms": m.turn_ms,
+        "cost_eur": round(m.cost_eur, 6),
+        "model_calls": m.model_calls,
+        "tool_calls": m.tool_calls,
+        "cache_hits": m.cache_hits,
+        "trips": m.trips,
+    }

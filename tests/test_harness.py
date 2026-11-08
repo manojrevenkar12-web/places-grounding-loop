@@ -30,8 +30,10 @@ def _agent(s, rel, g):
 
 def test_provenance_rejects_invented_coordinates(s, releases):
     _, r2 = releases
-    call = {"tool": "category_search", "args": {"category": "cafe", "lat": 52.51, "lon": 13.4, "radius_m": 900,
-                                                "day": 2, "hour": 12.5}}
+    call = {
+        "tool": "category_search",
+        "args": {"category": "cafe", "lat": 52.51, "lon": 13.4, "radius_m": 900, "day": 2, "hour": 12.5},
+    }
     for g, ran in ((GUARDED, False), (PLAIN, True)):
         ctx = _ctx()
         _agent(s, r2, g).turn(ctx, Scripted([call]), False, random.Random(0), Meter())
@@ -46,10 +48,28 @@ def test_provenance_accepts_coordinates_from_a_tool_result(s, releases):
     agent = _agent(s, r2, GUARDED)
     agent.svc.reseed(0)
     hit = agent.svc.search_forward("Rathausplatz")["results"][0]
-    agent.turn(ctx, Scripted([{"tool": "search_forward", "args": {"query": "Rathausplatz"}},
-                              {"tool": "category_search", "args": {"category": "cafe", "lat": hit["lat"],
-                                                                   "lon": hit["lon"], "radius_m": 900, "day": 2,
-                                                                   "hour": 12.5}}]), False, random.Random(0), Meter())
+    agent.turn(
+        ctx,
+        Scripted(
+            [
+                {"tool": "search_forward", "args": {"query": "Rathausplatz"}},
+                {
+                    "tool": "category_search",
+                    "args": {
+                        "category": "cafe",
+                        "lat": hit["lat"],
+                        "lon": hit["lon"],
+                        "radius_m": 900,
+                        "day": 2,
+                        "hour": 12.5,
+                    },
+                },
+            ]
+        ),
+        False,
+        random.Random(0),
+        Meter(),
+    )
     assert ctx.log[1].note is None and ctx.log[1].result is not None
 
 
@@ -59,11 +79,18 @@ def test_loop_guard_stops_a_repeated_empty_call_and_the_budget_ends_the_turn(s, 
     agent = _agent(s, r2, GUARDED)
     agent.svc.reseed(0)
     hit = agent.svc.search_forward("Rathausplatz")["results"][0]
-    empty = {"tool": "category_search", "args": {"category": "ev_charger", "lat": hit["lat"], "lon": hit["lon"],
-                                                 "radius_m": 1, "day": 2, "hour": 12.5}}
+    empty = {
+        "tool": "category_search",
+        "args": {"category": "ev_charger", "lat": hit["lat"], "lon": hit["lon"], "radius_m": 1, "day": 2, "hour": 12.5},
+    }
     m = Meter()
-    ans = agent.turn(ctx, Scripted([{"tool": "search_forward", "args": {"query": "Rathausplatz"}}] + [empty] * 40),
-                     False, random.Random(0), m)
+    ans = agent.turn(
+        ctx,
+        Scripted([{"tool": "search_forward", "args": {"query": "Rathausplatz"}}] + [empty] * 40),
+        False,
+        random.Random(0),
+        m,
+    )
     assert ans["stopped"] == "step_budget" and ans["steps"] == s.harness.max_steps
     assert sum(1 for o in ctx.log if o.tool == "category_search" and o.result is not None) == 1
     assert m.trips["loop_guard"] == s.harness.max_steps - 2
@@ -72,14 +99,17 @@ def test_loop_guard_stops_a_repeated_empty_call_and_the_budget_ends_the_turn(s, 
 def test_plain_loop_runs_to_its_safety_stop(s, releases):
     _, r2 = releases
     ctx = _ctx()
-    empty = {"tool": "category_search", "args": {"category": "ev_charger", "lat": 52.5, "lon": 13.4,
-                                                 "radius_m": 1, "day": 2, "hour": 12.5}}
+    empty = {
+        "tool": "category_search",
+        "args": {"category": "ev_charger", "lat": 52.5, "lon": 13.4, "radius_m": 1, "day": 2, "hour": 12.5},
+    }
     ans = _agent(s, r2, PLAIN).turn(ctx, Scripted([empty] * 40), False, random.Random(0), Meter())
     assert ans["stopped"] == "safety_stop" and ans["steps"] == s.harness.plain_max_steps
 
 
 def test_freshness_drops_facts_read_at_an_older_version(s, releases):
     from pgl.pipeline.release import apply_event
+
     _, r2 = releases
     agent = _agent(s, r2, GUARDED)
     pid = next(iter(r2.places))
@@ -96,6 +126,7 @@ def test_freshness_drops_facts_read_at_an_older_version(s, releases):
 
 def test_the_cache_is_keyed_by_data_version(s, releases):
     from pgl.pipeline.release import apply_event
+
     _, r2 = releases
     pid = next(iter(r2.places))
     for mode, stale in (("versioned", False), ("unversioned", True)):
@@ -128,9 +159,12 @@ def test_partial_results_are_retried_then_disclosed(s, releases):
 
 def test_ambiguous_twins_are_not_guessed(s, releases):
     from pgl.agents.model import same_as
-    hits = [{"kind": "place", "place_id": "a", "name": "Café Brunnen", "street": "Uferstraße", "housenumber": "82"},
-            {"kind": "place", "place_id": "b", "name": "Café Brunnen", "street": "Uferstraße", "housenumber": "81"},
-            {"kind": "place", "place_id": "c", "name": "Café Brunnen", "street": "Am Markt", "housenumber": "9"}]
+
+    hits = [
+        {"kind": "place", "place_id": "a", "name": "Café Brunnen", "street": "Uferstraße", "housenumber": "82"},
+        {"kind": "place", "place_id": "b", "name": "Café Brunnen", "street": "Uferstraße", "housenumber": "81"},
+        {"kind": "place", "place_id": "c", "name": "Café Brunnen", "street": "Am Markt", "housenumber": "9"},
+    ]
     assert [h["place_id"] for h in same_as(hits[0], hits, "Café Brunnen Uferstraße")] == ["a", "b"]
     assert [h["place_id"] for h in same_as(hits[0], hits, "Café Brunnen Uferstraße 82")] == ["a"]
 
@@ -141,11 +175,25 @@ def test_a_plan_runs_independent_calls_in_parallel(s, releases):
 
     class Planner(Scripted):
         def plan(self, ctx):
-            return [] if ctx.obs else [
-                {"tool": "search_forward", "args": {"query": "Rathausplatz"}, "pick": "landmark"},
-                {"tool": "search_forward", "args": {"query": "Busbahnhof"}, "pick": "landmark"},
-                {"tool": "route", "args": {"from_lat": "$0.lat", "from_lon": "$0.lon", "to_lat": "$1.lat",
-                                           "to_lon": "$1.lon", "mode": "walking"}}]
+            return (
+                []
+                if ctx.obs
+                else [
+                    {"tool": "search_forward", "args": {"query": "Rathausplatz"}, "pick": "landmark"},
+                    {"tool": "search_forward", "args": {"query": "Busbahnhof"}, "pick": "landmark"},
+                    {
+                        "tool": "route",
+                        "args": {
+                            "from_lat": "$0.lat",
+                            "from_lon": "$0.lon",
+                            "to_lat": "$1.lat",
+                            "to_lon": "$1.lon",
+                            "mode": "walking",
+                        },
+                    },
+                ]
+            )
+
     agent.svc.reseed(0)
     ctx = _ctx("How long does it take to walk from Rathausplatz to Busbahnhof on x?")
     m = Meter()

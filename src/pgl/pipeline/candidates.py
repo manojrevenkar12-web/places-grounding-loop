@@ -18,8 +18,12 @@ def pairs_local(records: list[dict], cell_m: float, max_m: float) -> set[tuple[s
         near = [r for dy in (-1, 0, 1) for dx in (-1, 0, 1) for r in grid.get((y + dy, x + dx), [])]
         for a in here:
             for b in near:
-                if a["key"] < b["key"] and a["category"] == b["category"] and a["source"] != b["source"] \
-                        and haversine_m(a["lat"], a["lon"], b["lat"], b["lon"]) <= max_m:
+                if (
+                    a["key"] < b["key"]
+                    and a["category"] == b["category"]
+                    and a["source"] != b["source"]
+                    and haversine_m(a["lat"], a["lon"], b["lat"], b["lon"]) <= max_m
+                ):
                     out.add((a["key"], b["key"]))
     return out
 
@@ -30,20 +34,34 @@ def pairs_spark(records: list[dict], cell_m: float, max_m: float, spark=None) ->
     from pyspark.sql import functions as F
 
     own = spark is None
-    spark = spark or (SparkSession.builder.master("local[2]").appName("pgl-candidates")
-                      .config("spark.ui.enabled", "false").config("spark.sql.shuffle.partitions", "8").getOrCreate())
+    spark = spark or (
+        SparkSession.builder.master("local[2]")
+        .appName("pgl-candidates")
+        .config("spark.ui.enabled", "false")
+        .config("spark.sql.shuffle.partitions", "8")
+        .getOrCreate()
+    )
     try:
-        rows = [(r["key"], r["source"], r["category"], r["lat"], r["lon"], *cell(r["lat"], r["lon"], cell_m))
-                for r in records]
+        rows = [
+            (r["key"], r["source"], r["category"], r["lat"], r["lon"], *cell(r["lat"], r["lon"], cell_m))
+            for r in records
+        ]
         df = spark.createDataFrame(rows, ["key", "source", "category", "lat", "lon", "cy", "cx"])
         offsets = spark.createDataFrame([(dy, dx) for dy in (-1, 0, 1) for dx in (-1, 0, 1)], ["dy", "dx"])
         probe = df.crossJoin(offsets).select(
-            F.col("key").alias("bkey"), F.col("source").alias("bsource"), F.col("category").alias("bcategory"),
-            F.col("lat").alias("blat"), F.col("lon").alias("blon"),
-            (F.col("cy") + F.col("dy")).alias("cy"), (F.col("cx") + F.col("dx")).alias("cx"))
+            F.col("key").alias("bkey"),
+            F.col("source").alias("bsource"),
+            F.col("category").alias("bcategory"),
+            F.col("lat").alias("blat"),
+            F.col("lon").alias("blon"),
+            (F.col("cy") + F.col("dy")).alias("cy"),
+            (F.col("cx") + F.col("dx")).alias("cx"),
+        )
         j = df.join(probe, ["cy", "cx"]).where(
-            (F.col("key") < F.col("bkey")) & (F.col("category") == F.col("bcategory"))
-            & (F.col("source") != F.col("bsource")))
+            (F.col("key") < F.col("bkey"))
+            & (F.col("category") == F.col("bcategory"))
+            & (F.col("source") != F.col("bsource"))
+        )
         rad = F.lit(3.141592653589793 / 180)
         dlat, dlon = (F.col("blat") - F.col("lat")) * rad, (F.col("blon") - F.col("lon")) * rad
         a = F.sin(dlat / 2) ** 2 + F.cos(F.col("lat") * rad) * F.cos(F.col("blat") * rad) * F.sin(dlon / 2) ** 2

@@ -41,6 +41,7 @@ def request_type(text: str) -> str:
 @dataclass
 class Obs:
     """One observation in the model's context: the call it made and what came back (or a note from the harness)."""
+
     tool: str
     args: dict
     result: dict | None = None
@@ -56,9 +57,9 @@ class Context:
     hour: float
     turn: int
     obs: list[Obs] = field(default_factory=list)
-    memory: dict = field(default_factory=dict)   # what the model said in earlier turns (its own answers)
+    memory: dict = field(default_factory=dict)  # what the model said in earlier turns (its own answers)
     draws: dict = field(default_factory=dict)
-    log: list[Obs] = field(default_factory=list)   # everything that happened, kept for the trace
+    log: list[Obs] = field(default_factory=list)  # everything that happened, kept for the trace
 
     def add(self, o: Obs) -> None:
         self.obs.append(o)
@@ -155,16 +156,24 @@ class SimulatedModel:
     def _category(self, ctx: Context, cat: str, near: str) -> dict:
         last = self._last(ctx, "category_search")
         if last is None:
-            if self._draw(ctx, "coords", self.p_halluc):     # skips the geocode and makes a point up
+            if self._draw(ctx, "coords", self.p_halluc):  # skips the geocode and makes a point up
                 lat, lon = self._invent_point()
             else:
                 pt = self._geocode(ctx, near, "landmark")
                 if isinstance(pt, dict):
                     return pt
                 lat, lon = pt
-            return {"tool": "category_search", "args": {"category": cat, "lat": lat, "lon": lon,
-                                                        "radius_m": self.s.harness.start_radius_m,
-                                                        "day": ctx.day, "hour": ctx.hour}}
+            return {
+                "tool": "category_search",
+                "args": {
+                    "category": cat,
+                    "lat": lat,
+                    "lon": lon,
+                    "radius_m": self.s.harness.start_radius_m,
+                    "day": ctx.day,
+                    "hour": ctx.hour,
+                },
+            }
         if last.note == "duplicate_empty" or (not last.result["results"] and last.result["complete"]):
             args = dict(last.args)
             if last.note != "duplicate_empty" and self._draw(ctx, f"repeat:{id(last)}", self.p_repeat):
@@ -182,9 +191,16 @@ class SimulatedModel:
             pid = self._invent_id() if self._draw(ctx, "pid", self.p_halluc) else top["place_id"]
             return {"tool": "place_details", "args": {"place_id": pid}}
         d = det.result
-        return {"answer": {"place_id": d["place_id"], "name": d["name"], "open": _open(d, ctx),
-                           "closes": (d["hours"] or {}).get("close"), "partial": last.note == "partial_after_retries",
-                           "data_version": d["data_version"]}}
+        return {
+            "answer": {
+                "place_id": d["place_id"],
+                "name": d["name"],
+                "open": _open(d, ctx),
+                "closes": (d["hours"] or {}).get("close"),
+                "partial": last.note == "partial_after_retries",
+                "data_version": d["data_version"],
+            }
+        }
 
     def _follow_up(self, ctx: Context) -> dict:
         pid = ctx.memory.get("place_id")
@@ -192,12 +208,21 @@ class SimulatedModel:
             return {"answer": {"text": "Which place do you mean?"}}
         det = self._last(ctx, "place_details")
         if det is None:
-            earlier = [o for o in ctx.obs if o.tool == "place_details" and o.result
-                       and o.result.get("place_id") == pid and o.turn < ctx.turn]
-            if earlier and self._draw(ctx, "stale", self.p_stale):      # answers from what it read last turn
+            earlier = [
+                o
+                for o in ctx.obs
+                if o.tool == "place_details" and o.result and o.result.get("place_id") == pid and o.turn < ctx.turn
+            ]
+            if earlier and self._draw(ctx, "stale", self.p_stale):  # answers from what it read last turn
                 d = earlier[-1].result
-                return {"answer": {"place_id": pid, "open": _open(d, ctx), "data_version": d["data_version"],
-                                   "from_turn": earlier[-1].turn}}
+                return {
+                    "answer": {
+                        "place_id": pid,
+                        "open": _open(d, ctx),
+                        "data_version": d["data_version"],
+                        "from_turn": earlier[-1].turn,
+                    }
+                }
             return {"tool": "place_details", "args": {"place_id": pid}}
         d = det.result
         return {"answer": {"place_id": pid, "open": _open(d, ctx), "data_version": d["data_version"]}}
@@ -215,16 +240,19 @@ class SimulatedModel:
                 return b
         rt = self._last(ctx, "route")
         if rt is None:
-            return {"tool": "route", "args": {"from_lat": a[0], "from_lon": a[1], "to_lat": b[0], "to_lon": b[1],
-                                              "mode": "walking"}}
+            return {
+                "tool": "route",
+                "args": {"from_lat": a[0], "from_lon": a[1], "to_lat": b[0], "to_lon": b[1], "mode": "walking"},
+            }
         return {"answer": {"minutes": rt.result["duration_min"]}}
 
     def _phone(self, ctx: Context, name: str, addr: str) -> dict:
         target = f"{name} {addr}"
         det = self._last(ctx, "place_details")
         if det is None:
-            o = next((x for x in reversed(ctx.obs) if x.tool == "search_forward" and x.turn == ctx.turn
-                      and x.result), None)
+            o = next(
+                (x for x in reversed(ctx.obs) if x.tool == "search_forward" and x.turn == ctx.turn and x.result), None
+            )
             if o is None:
                 return {"tool": "search_forward", "args": {"query": target}}
             r = self._search_result(o, ctx)
@@ -261,26 +289,41 @@ class SimulatedModel:
                 coords = {"lat": f"{R}0.lat", "lon": f"{R}0.lon"}
             n = len(first)
             return first + [
-                {"tool": "category_search", "args": {"category": cat, **coords, "radius_m": radius,
-                                                     "day": ctx.day, "hour": ctx.hour},
-                 "on_empty": {"widen": self.s.harness.widen_radius_factor,
-                              "max_radius_m": self.s.harness.max_radius_m}},
-                {"tool": "place_details", "args": {"place_id": f"{R}{n}.place_id"}}]
+                {
+                    "tool": "category_search",
+                    "args": {"category": cat, **coords, "radius_m": radius, "day": ctx.day, "hour": ctx.hour},
+                    "on_empty": {
+                        "widen": self.s.harness.widen_radius_factor,
+                        "max_radius_m": self.s.harness.max_radius_m,
+                    },
+                },
+                {"tool": "place_details", "args": {"place_id": f"{R}{n}.place_id"}},
+            ]
         if kind == "eta":
             origin, name, street = g
-            b = ({"to_lat": "$1.lat", "to_lon": "$1.lon"} if not self._draw(ctx, "dest", self.p_halluc) else
-                 dict(zip(("to_lat", "to_lon"), self._invent_point())))
-            return [{"tool": "search_forward", "args": {"query": origin}, "pick": "landmark"},
-                    {"tool": "search_forward", "args": {"query": f"{name} {street}"}, "pick": "place"},
-                    {"tool": "route", "args": {"from_lat": "$0.lat", "from_lon": "$0.lon", **b, "mode": "walking"}}]
+            b = (
+                {"to_lat": "$1.lat", "to_lon": "$1.lon"}
+                if not self._draw(ctx, "dest", self.p_halluc)
+                else dict(zip(("to_lat", "to_lon"), self._invent_point()))
+            )
+            return [
+                {"tool": "search_forward", "args": {"query": origin}, "pick": "landmark"},
+                {"tool": "search_forward", "args": {"query": f"{name} {street}"}, "pick": "place"},
+                {"tool": "route", "args": {"from_lat": "$0.lat", "from_lon": "$0.lon", **b, "mode": "walking"}},
+            ]
         if kind == "phone":
             pid = "$0.place_id" if not self._draw(ctx, "pid", self.p_halluc) else self._invent_id()
-            return [{"tool": "search_forward", "args": {"query": " ".join(g)}, "pick": "place"},
-                    {"tool": "place_details", "args": {"place_id": pid}}]
+            return [
+                {"tool": "search_forward", "args": {"query": " ".join(g)}, "pick": "place"},
+                {"tool": "place_details", "args": {"place_id": pid}},
+            ]
         if kind == "follow_up":
             pid = ctx.memory.get("place_id")
-            earlier = [o for o in ctx.obs if o.tool == "place_details" and o.result and o.turn < ctx.turn
-                       and o.result.get("place_id") == pid]
+            earlier = [
+                o
+                for o in ctx.obs
+                if o.tool == "place_details" and o.result and o.turn < ctx.turn and o.result.get("place_id") == pid
+            ]
             if earlier and self._draw(ctx, "stale", self.p_stale):
                 return []
             return [{"tool": "place_details", "args": {"place_id": pid}}] if pid else []
@@ -295,10 +338,15 @@ def same_as(hit: dict, hits: list[dict], query: str) -> list[dict]:
     """Hits that match the request exactly as well as `hit`: same name and street, and the same house number when
     the request gives one."""
     from pgl.pipeline.normalize import name_key, street_key
+
     num = hit.get("housenumber") if f" {hit.get('housenumber')}" in f" {query} " else None
     key = (name_key(hit["name"]), street_key(hit.get("street", "")), num)
-    return [h for h in hits if h.get("kind") == "place" and
-            (name_key(h["name"]), street_key(h.get("street", "")), num and h.get("housenumber")) == key]
+    return [
+        h
+        for h in hits
+        if h.get("kind") == "place"
+        and (name_key(h["name"]), street_key(h.get("street", "")), num and h.get("housenumber")) == key
+    ]
 
 
 def _open(d: dict, ctx: Context) -> bool:

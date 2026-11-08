@@ -29,8 +29,13 @@ def main() -> None:
     cases = feedback.load_cases()
     a = ev.run(named(cur), tasks, truth, s.run.repeats)
     b = ev.run(named(cand), tasks, truth, s.run.repeats)
-    d = gate.decide(a, b, feedback.replay(ev, named(cur), cases, tasks, truth, s),
-                    feedback.replay(ev, named(cand), cases, tasks, truth, s), s)
+    d = gate.decide(
+        a,
+        b,
+        feedback.replay(ev, named(cur), cases, tasks, truth, s),
+        feedback.replay(ev, named(cand), cases, tasks, truth, s),
+        s,
+    )
     print(json.dumps({"current": cur, "candidate": cand, **d}, indent=1))
     sys.exit(1 if d["blocked"] else 0)
 

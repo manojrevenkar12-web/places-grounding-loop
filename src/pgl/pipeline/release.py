@@ -63,8 +63,10 @@ def _match(recs: list[dict], s: Settings, naive: bool) -> list[tuple[str, str]]:
     if naive:
         for a, b in cand:
             ra, rb = by[a], by[b]
-            if name_key(ra["name"]) == name_key(rb["name"]) and haversine_m(ra["lat"], ra["lon"], rb["lat"],
-                                                                             rb["lon"]) <= s.pipeline.naive_match_m:
+            if (
+                name_key(ra["name"]) == name_key(rb["name"])
+                and haversine_m(ra["lat"], ra["lon"], rb["lat"], rb["lon"]) <= s.pipeline.naive_match_m
+            ):
                 scored.append((1.0, a, b))
     else:
         m = Matcher.load()
@@ -86,16 +88,29 @@ def _fuse(group: list[dict], s: Settings) -> dict:
     par = next((r for r in group if r["source"] == "partner"), None)
     base = com or par
     prov = {}
-    if com and par and haversine_m(com["lat"], com["lon"], par["lat"], par["lon"]) > s.pipeline.coord_prefer_community_m:
+    if (
+        com
+        and par
+        and haversine_m(com["lat"], com["lon"], par["lat"], par["lon"]) > s.pipeline.coord_prefer_community_m
+    ):
         prov["position"] = "community (sources disagree)"
     else:
         prov["position"] = base["source"]
     hours = (par or {}).get("hours") or (com or {}).get("hours")
     prov["hours"] = "partner" if (par or {}).get("hours") else ("community" if hours else None)
-    return {"name": base["name"], "category": base["category"], "lat": base["lat"], "lon": base["lon"],
-            "street": (com or par)["street"], "housenumber": base["housenumber"], "hours": hours,
-            "phone": (par or {}).get("phone"), "status": "open", "sources": sorted(r["source"] for r in group),
-            "provenance": prov}
+    return {
+        "name": base["name"],
+        "category": base["category"],
+        "lat": base["lat"],
+        "lon": base["lon"],
+        "street": (com or par)["street"],
+        "housenumber": base["housenumber"],
+        "hours": hours,
+        "phone": (par or {}).get("phone"),
+        "status": "open",
+        "sources": sorted(r["source"] for r in group),
+        "provenance": prov,
+    }
 
 
 def _mint(n: int) -> str:
@@ -115,8 +130,9 @@ def build(release: int, s: Settings, previous: Release | None = None, naive: boo
         for pid, keys in previous.members.items():
             for k in keys:
                 prev_by_key[k] = pid
-    counter = max([int(p.split("_")[1]) for p in (previous.places if previous else {}) if p.split("_")[1].isdigit()]
-                  + [0])
+    counter = max(
+        [int(p.split("_")[1]) for p in (previous.places if previous else {}) if p.split("_")[1].isdigit()] + [0]
+    )
     taken = set()
     pending = []
     for g in groups:
@@ -141,7 +157,10 @@ def build(release: int, s: Settings, previous: Release | None = None, naive: boo
                 if qid in taken or q["category"] != fused["category"]:
                     continue
                 d = haversine_m(q["lat"], q["lon"], fused["lat"], fused["lon"])
-                if d <= s.pipeline.inherit_radius_m and similarity(q["name"], fused["name"]) >= s.pipeline.inherit_min_similarity:
+                if (
+                    d <= s.pipeline.inherit_radius_m
+                    and similarity(q["name"], fused["name"]) >= s.pipeline.inherit_min_similarity
+                ):
                     if best is None or d < best[0]:
                         best = (d, qid)
             pid = best[1] if best else None
@@ -167,8 +186,11 @@ def _closures(places: dict, members: dict, by: dict, fb: list[dict], s: Settings
                 signals[pid].add(by[k]["source"])
     reports: dict[str, int] = {}
     for r in fb:
-        near = [(haversine_m(p["lat"], p["lon"], r["lat"], r["lon"]), pid) for pid, p in places.items()
-                if p["category"] == r["category"] and similarity(p["name"], r["name"]) >= 0.5]
+        near = [
+            (haversine_m(p["lat"], p["lon"], r["lat"], r["lon"]), pid)
+            for pid, p in places.items()
+            if p["category"] == r["category"] and similarity(p["name"], r["name"]) >= 0.5
+        ]
         near = [x for x in near if x[0] <= 80]
         if near:
             pid = min(near)[1]
@@ -191,10 +213,14 @@ def checks(rel: Release, previous: Release | None, s: Settings) -> dict:
     if previous:
         kept = set(rel.places) & set(previous.places)
         lost = 1 - len(kept) / max(1, len(previous.places))
-    return {"places": len(ps), "confirmed_by_both": round(both / max(1, len(ps)), 4),
-            "with_hours": round(with_hours / max(1, len(ps)), 4),
-            "position_disagreement": round(disagree / max(1, len(ps)), 4),
-            "closed": sum(p["status"] == "closed" for p in ps), "id_loss_share": round(lost, 4)}
+    return {
+        "places": len(ps),
+        "confirmed_by_both": round(both / max(1, len(ps)), 4),
+        "with_hours": round(with_hours / max(1, len(ps)), 4),
+        "position_disagreement": round(disagree / max(1, len(ps)), 4),
+        "closed": sum(p["status"] == "closed" for p in ps),
+        "id_loss_share": round(lost, 4),
+    }
 
 
 def apply_event(rel: Release, event: dict) -> None:

@@ -17,8 +17,9 @@ CASES = ROOT / "evalcases" / "regressions.jsonl"
 LOG = ROOT / "logs" / "production.jsonl"
 
 
-def production(ev: Evaluator, guards: Guards, tasks: list[dict], truth: dict, s: Settings, days: int,
-               offset: int = 100) -> tuple[list[dict], list[dict]]:
+def production(
+    ev: Evaluator, guards: Guards, tasks: list[dict], truth: dict, s: Settings, days: int, offset: int = 100
+) -> tuple[list[dict], list[dict]]:
     """Runs `days` passes of production traffic and returns the log and the scored runs. Users report
     from what they experienced, which the world knows and the log does not."""
     agent = Agent(ev.svc, s, guards, cache={})
@@ -29,10 +30,21 @@ def production(ev: Evaluator, guards: Guards, tasks: list[dict], truth: dict, s:
             r = ev.one(agent, task, truth[task["id"]], d)
             bad = r["outcome"] != "right"
             reported = rng.random() < (s.eval.user_report_wrong if bad else s.eval.user_report_right)
-            log.append({"request": f"{task['id']}@{d}", "task": task["id"], "seed_repeat": d, "turns": task["turns"],
-                        "now": task["now"], "answers": r["answers"], "trace": [
-                            {k: o[k] for k in ("turn", "tool", "args", "note", "error", "complete", "empty")}
-                            for o in r["trace"]], "user_report": reported})
+            log.append(
+                {
+                    "request": f"{task['id']}@{d}",
+                    "task": task["id"],
+                    "seed_repeat": d,
+                    "turns": task["turns"],
+                    "now": task["now"],
+                    "answers": r["answers"],
+                    "trace": [
+                        {k: o[k] for k in ("turn", "tool", "args", "note", "error", "complete", "empty")}
+                        for o in r["trace"]
+                    ],
+                    "user_report": reported,
+                }
+            )
             runs.append(r)
     return log, runs
 
@@ -50,12 +62,25 @@ def triage(log: list[dict], runs: list[dict]) -> dict:
         if key in seen:
             continue
         seen.add(key)
-        cases.append({"case": f"REG-{len(cases) + 1:03d}", "task": e["task"], "seed_repeat": e["seed_repeat"],
-                      "modes": list(key[1]), "found_in": e["request"]})
+        cases.append(
+            {
+                "case": f"REG-{len(cases) + 1:03d}",
+                "task": e["task"],
+                "seed_repeat": e["seed_repeat"],
+                "modes": list(key[1]),
+                "found_in": e["request"],
+            }
+        )
     missed = sum(1 for r in runs if r["outcome"] != "right") - len(confirmed)
-    return {"requests": len(log), "failed": sum(1 for r in runs if r["outcome"] != "right"),
-            "reported": len(reported), "false_reports": len(reported) - len(confirmed),
-            "confirmed": len(confirmed), "unreported_failures": missed, "cases": cases}
+    return {
+        "requests": len(log),
+        "failed": sum(1 for r in runs if r["outcome"] != "right"),
+        "reported": len(reported),
+        "false_reports": len(reported) - len(confirmed),
+        "confirmed": len(confirmed),
+        "unreported_failures": missed,
+        "cases": cases,
+    }
 
 
 def save_cases(cases: list[dict]) -> None:
@@ -69,7 +94,7 @@ def save_log(log: list[dict]) -> None:
 
 
 def load_cases() -> list[dict]:
-    return [json.loads(l) for l in CASES.read_text().splitlines()] if CASES.exists() else []
+    return [json.loads(line) for line in CASES.read_text().splitlines()] if CASES.exists() else []
 
 
 def replay(ev: Evaluator, guards: Guards, cases: list[dict], tasks: list[dict], truth: dict, s: Settings) -> dict:

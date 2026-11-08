@@ -48,19 +48,25 @@ def score(rel: Release, s: Settings, area: str, previous: Release | None = None)
         if t["status"] == "closed" and p["status"] == "open":
             stale_open += 1
     closed_true = sum(1 for pid in in_area if truth[mapping[pid][0]]["status"] == "closed")
-    closed_right = sum(1 for pid in in_area if truth[mapping[pid][0]]["status"] == "closed"
-                       and rel.places[pid]["status"] == "closed")
-    closed_wrong = sum(1 for pid in in_area if truth[mapping[pid][0]]["status"] == "open"
-                       and rel.places[pid]["status"] == "closed")
+    closed_right = sum(
+        1 for pid in in_area if truth[mapping[pid][0]]["status"] == "closed" and rel.places[pid]["status"] == "closed"
+    )
+    closed_wrong = sum(
+        1 for pid in in_area if truth[mapping[pid][0]]["status"] == "open" and rel.places[pid]["status"] == "closed"
+    )
     open_truth = [t for t in truth.values() if t["status"] == "open" and area_of(t, s) == area]
     covered = sum(1 for t in open_truth if t["pid"] in by_truth)
     out = {
-        "places": len(in_area), "completeness": round(covered / max(1, len(open_truth)), 4),
-        "duplicates": duplicates, "wrong_merges": wrong_merges,
+        "places": len(in_area),
+        "completeness": round(covered / max(1, len(open_truth)), 4),
+        "duplicates": duplicates,
+        "wrong_merges": wrong_merges,
         "position_error_median_m": round(statistics.median(errs), 1) if errs else None,
         "position_error_p90_m": round(sorted(errs)[int(0.9 * (len(errs) - 1))], 1) if errs else None,
         "hours_correct": round(hours_ok / max(1, hours_n), 4),
-        "closed_still_listed_open": stale_open, "closures_applied": closed_right, "closed_in_truth": closed_true,
+        "closed_still_listed_open": stale_open,
+        "closures_applied": closed_right,
+        "closed_in_truth": closed_true,
         "wrongly_closed": closed_wrong,
     }
     if previous is not None:

@@ -8,10 +8,12 @@ from pgl.pipeline.release import apply_event, build, sources
 def test_spark_and_local_blocking_agree(s):
     pytest.importorskip("pyspark")
     from pgl.pipeline.candidates import pairs_spark
+
     recs, _ = sources(1)
-    recs = [r for r in recs if r["lon"] < s.world.lon_min + 0.06]   # a slice keeps the test quick
+    recs = [r for r in recs if r["lon"] < s.world.lon_min + 0.06]  # a slice keeps the test quick
     assert pairs_spark(recs, s.pipeline.cell_m, s.pipeline.max_distance_m) == pairs_local(
-        recs, s.pipeline.cell_m, s.pipeline.max_distance_m)
+        recs, s.pipeline.cell_m, s.pipeline.max_distance_m
+    )
 
 
 def test_place_ids_survive_a_refresh(s, releases):

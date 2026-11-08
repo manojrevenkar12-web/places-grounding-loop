@@ -21,5 +21,6 @@ def s():
 @pytest.fixture
 def releases():
     import copy
+
     r1, r2 = _releases()
     return r1, copy.deepcopy(r2)

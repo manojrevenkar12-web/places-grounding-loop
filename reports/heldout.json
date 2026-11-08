@@ -1,0 +1,158 @@
+{
+ "area": "heldout",
+ "commit": "ad8a5e5",
+ "fingerprint": "e6b99fa924d5a22c01e98630b91bca688cc52147d765f69ace27688b1b8ff83f",
+ "pipeline": {
+  "full": {
+   "places": 522,
+   "completeness": 0.996,
+   "duplicates": 3,
+   "wrong_merges": 0,
+   "position_error_median_m": 4.4,
+   "position_error_p90_m": 11.0,
+   "hours_correct": 0.9423,
+   "closed_still_listed_open": 6,
+   "closures_applied": 10,
+   "closed_in_truth": 16,
+   "wrongly_closed": 0,
+   "id_stability": 0.9956,
+   "id_stability_n": 456
+  },
+  "naive": {
+   "places": 643,
+   "completeness": 0.996,
+   "duplicates": 126,
+   "wrong_merges": 2,
+   "position_error_median_m": 5.6,
+   "position_error_p90_m": 64.9,
+   "hours_correct": 0.9291,
+   "closed_still_listed_open": 16,
+   "closures_applied": 7,
+   "closed_in_truth": 23,
+   "wrongly_closed": 0,
+   "id_stability": 0.4844,
+   "id_stability_n": 353
+  }
+ },
+ "harnesses": {
+  "plain": {
+   "success": 0.6981,
+   "success_lo": 0.6038,
+   "success_hi": 0.7862,
+   "wrong": 0.2201,
+   "no_answer": 0.0818,
+   "by_kind": {
+    "eta": 0.6944,
+    "follow_up": 0.5238,
+    "nearest_open": 0.7778,
+    "phone": 0.6389,
+    "sparse": 0.8
+   },
+   "modes": {
+    "invented_argument": 0.1006,
+    "stale_context": 0.0566,
+    "silent_partial": 0.0692,
+    "unbounded_loop": 0.044,
+    "guessed_between_matches": 0.0755
+   },
+   "trips": {},
+   "p50_ms": 5728,
+   "p95_ms": 8122,
+   "cost_eur": 0.01468,
+   "model_calls": 3.75,
+   "tool_calls": 2.75,
+   "cache_hit_share": 0.0,
+   "runs": 159,
+   "turns": 180
+  },
+  "guarded": {
+   "success": 0.9057,
+   "success_lo": 0.8302,
+   "success_hi": 0.9811,
+   "wrong": 0.0189,
+   "no_answer": 0.0755,
+   "by_kind": {
+    "eta": 1.0,
+    "follow_up": 1.0,
+    "nearest_open": 1.0,
+    "phone": 0.6667,
+    "sparse": 0.9
+   },
+   "modes": {
+    "invented_argument": 0.0,
+    "stale_context": 0.0,
+    "silent_partial": 0.0,
+    "unbounded_loop": 0.0,
+    "guessed_between_matches": 0.0
+   },
+   "trips": {
+    "loop_guard": 13,
+    "provenance": 22,
+    "ambiguity": 12,
+    "partial_retry": 17,
+    "freshness": 17
+   },
+   "p50_ms": 2373,
+   "p95_ms": 6699,
+   "cost_eur": 0.0097,
+   "model_calls": 3.83,
+   "tool_calls": 2.48,
+   "cache_hit_share": 0.0708,
+   "runs": 159,
+   "turns": 180
+  },
+  "plan_fetch": {
+   "success": 0.9057,
+   "success_lo": 0.8302,
+   "success_hi": 0.9811,
+   "wrong": 0.0189,
+   "no_answer": 0.0755,
+   "by_kind": {
+    "eta": 1.0,
+    "follow_up": 1.0,
+    "nearest_open": 1.0,
+    "phone": 0.6667,
+    "sparse": 0.9
+   },
+   "modes": {
+    "invented_argument": 0.0,
+    "stale_context": 0.0,
+    "silent_partial": 0.0,
+    "unbounded_loop": 0.0,
+    "guessed_between_matches": 0.0
+   },
+   "trips": {
+    "plan_widen": 21,
+    "ambiguity": 51,
+    "partial_retry": 17,
+    "freshness": 17,
+    "provenance": 15
+   },
+   "p50_ms": 2034,
+   "p95_ms": 2905,
+   "cost_eur": 0.00572,
+   "model_calls": 2.27,
+   "tool_calls": 2.48,
+   "cache_hit_share": 0.1832,
+   "runs": 159,
+   "turns": 180
+  }
+ },
+ "paired": {
+  "guarded vs plain": [
+   0.2075,
+   0.1384,
+   0.283
+  ],
+  "plan_fetch vs plain": [
+   0.2075,
+   0.1384,
+   0.283
+  ],
+  "plan_fetch vs guarded": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ }
+}

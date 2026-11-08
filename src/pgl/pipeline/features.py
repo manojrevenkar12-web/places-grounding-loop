@@ -7,8 +7,15 @@ import math
 from pgl.geo import haversine_m
 from pgl.pipeline.normalize import name_key, similarity, street_key
 
-NAMES = ["log_distance", "name_similarity", "same_name_key", "same_housenumber", "same_street", "same_phone",
-         "phone_conflict"]
+NAMES = [
+    "log_distance",
+    "name_similarity",
+    "same_name_key",
+    "same_housenumber",
+    "same_street",
+    "same_phone",
+    "phone_conflict",
+]
 
 
 def features(a: dict, b: dict) -> list[float]:

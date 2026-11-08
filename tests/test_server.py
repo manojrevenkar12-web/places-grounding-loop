@@ -1,7 +1,6 @@
 import asyncio
 import json
 
-import pytest
 from mcp import Client
 
 from pgl.servers.places import PlacesService, server
@@ -21,6 +20,7 @@ def test_tools_are_listed_read_only_and_answer(s, releases):
             assert body["results"][0]["name"] == "Rathausplatz" and "data_version" in body
             bad = await c.call_tool("place_details", {"place_id": "plc_999999"})
             assert bad.is_error
+
     asyncio.run(go())
 
 
@@ -37,6 +37,7 @@ def test_a_lost_shard_is_reported_as_partial(s, releases):
 
 def test_details_carry_the_version_they_were_read_at(s, releases):
     from pgl.pipeline.release import apply_event
+
     _, r2 = releases
     svc = PlacesService(r2, s)
     pid = next(iter(r2.places))

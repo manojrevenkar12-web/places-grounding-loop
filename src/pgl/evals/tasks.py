@@ -10,7 +10,6 @@ import zlib
 from collections import Counter
 
 from pgl.agents.harness import Agent, Guards, run_task
-from pgl.agents.model import Context
 from pgl.evals.pipeline_eval import place_to_truth
 from pgl.pipeline.release import Release, apply_event, read_jsonl
 from pgl.servers.places import PlacesService
@@ -30,8 +29,14 @@ def load_tasks(area: str) -> tuple[list[dict], dict[str, dict]]:
         tr = truth[t["id"]]
         if t["kind"] in ("eta", "phone"):
             p = by_pid[tr["accept_pids"][0]]
-            same = [q for q in world if q["status"] == "open" and q["name"] == p["name"] and q["street"] == p["street"]
-                    and (t["kind"] == "eta" or q["housenumber"] == p["housenumber"])]
+            same = [
+                q
+                for q in world
+                if q["status"] == "open"
+                and q["name"] == p["name"]
+                and q["street"] == p["street"]
+                and (t["kind"] == "eta" or q["housenumber"] == p["housenumber"])
+            ]
             tr["ambiguous"] = len(same) > 1
     return tasks, truth
 
@@ -58,7 +63,9 @@ def failure_modes(run: dict, task: dict, truth: dict) -> set[str]:
     for o in run["trace"]:
         earlier = {a.get("place_id") for a in run["answers"][: o["turn"]]} - {None}
         executed = o["note"] not in ("ungrounded", "duplicate_empty", "ambiguous") and o["tool"] not in (
-            "answer", "status")
+            "answer",
+            "status",
+        )
         if executed:
             for x, y in COORDS:
                 if x in o["args"] and (round(o["args"][x], 6), round(o["args"][y], 6)) not in pts:
@@ -78,19 +85,22 @@ def failure_modes(run: dict, task: dict, truth: dict) -> set[str]:
             found.add("stale_context")
         if a.get("stopped"):
             found.add("unbounded_loop" if a["stopped"] == "safety_stop" else "step_budget")
-        searches = [o for o in run["trace"] if o["turn"] == i and o["tool"] in ("search_forward", "category_search")
-                    and o["result"] is not None]
+        searches = [
+            o
+            for o in run["trace"]
+            if o["turn"] == i and o["tool"] in ("search_forward", "category_search") and o["result"] is not None
+        ]
         if searches and searches[-1]["complete"] is False and not a.get("partial") and not a.get("stopped"):
             found.add("silent_partial")
-    calls = Counter((o["turn"], o["tool"], json.dumps(o["args"], sort_keys=True)) for o in run["trace"]
-                    if o["empty"])
+    calls = Counter((o["turn"], o["tool"], json.dumps(o["args"], sort_keys=True)) for o in run["trace"] if o["empty"])
     if any(n >= 3 for n in calls.values()):
         found.add("unbounded_loop")
     return found
 
 
-def score_turn(task: dict, truth: dict, i: int, ans: dict, rel: Release, mapping: dict, s: Settings,
-               expect_open: bool | None) -> str:
+def score_turn(
+    task: dict, truth: dict, i: int, ans: dict, rel: Release, mapping: dict, s: Settings, expect_open: bool | None
+) -> str:
     """'right', 'wrong' or 'no_answer'. Asking which place is meant is right when the request is ambiguous."""
     kind = task["kind"]
     if ans.get("clarify") is not None:
@@ -121,8 +131,15 @@ class Evaluator:
         self.mapping = place_to_truth(rel)
         self.svc = PlacesService(rel, s)
 
-    def run(self, guards: Guards, tasks: list[dict], truth: dict, repeats: int, repeat_offset: int = 0,
-            cache: dict | None = None) -> list[dict]:
+    def run(
+        self,
+        guards: Guards,
+        tasks: list[dict],
+        truth: dict,
+        repeats: int,
+        repeat_offset: int = 0,
+        cache: dict | None = None,
+    ) -> list[dict]:
         agent = Agent(self.svc, self.s, guards, cache={} if cache is None else cache)
         out = []
         for r in range(repeat_offset, repeat_offset + repeats):
@@ -148,8 +165,15 @@ class Evaluator:
                     apply_event(rel, {"place_id": pid, "kind": "closed"})
                 else:
                     h = p.get("hours") or {}
-                    apply_event(rel, {"place_id": pid, "kind": "hours", "open": h.get("open", 8),
-                                      "close": max(h.get("open", 8) + 1, task["now"]["hour"] - 0.5)})
+                    apply_event(
+                        rel,
+                        {
+                            "place_id": pid,
+                            "kind": "hours",
+                            "open": h.get("open", 8),
+                            "close": max(h.get("open", 8) + 1, task["now"]["hour"] - 0.5),
+                        },
+                    )
                     if open_now(rel.places[pid], task["now"]["day"], task["now"]["hour"]):
                         apply_event(rel, {"place_id": pid, "kind": "closed"})
             expect[0] = open_now(rel.places[pid], task["now"]["day"], task["now"]["hour"])
@@ -159,16 +183,27 @@ class Evaluator:
         for a in run["answers"]:
             if a.get("from_turn") is not None:
                 a["stale_version"] = a.get("data_version") != version_now
-        verdicts = [score_turn(task, truth, i, a, rel, self.mapping, s, expect[0])
-                    for i, a in enumerate(run["answers"])]
-        for pid, p in saved.items():      # the world goes back for the next task, as a new data version
+        verdicts = [
+            score_turn(task, truth, i, a, rel, self.mapping, s, expect[0]) for i, a in enumerate(run["answers"])
+        ]
+        for pid, p in saved.items():  # the world goes back for the next task, as a new data version
             rel.places[pid] = p
             rel.version += 1
-        outcome = ("right" if all(v == "right" for v in verdicts) else
-                   "wrong" if "wrong" in verdicts else "no_answer")
-        return {"id": task["id"], "kind": task["kind"], "repeat": repeat, "outcome": outcome, "verdicts": verdicts,
-                "modes": sorted(failure_modes(run, task, truth)), "latency_ms": run["latency_ms"],
-                "turn_ms": run["turn_ms"],
-                "cost_eur": run["cost_eur"], "model_calls": run["model_calls"], "tool_calls": run["tool_calls"],
-                "cache_hits": run["cache_hits"], "trips": run["trips"], "answers": run["answers"],
-                "trace": run["trace"]}
+        outcome = "right" if all(v == "right" for v in verdicts) else "wrong" if "wrong" in verdicts else "no_answer"
+        return {
+            "id": task["id"],
+            "kind": task["kind"],
+            "repeat": repeat,
+            "outcome": outcome,
+            "verdicts": verdicts,
+            "modes": sorted(failure_modes(run, task, truth)),
+            "latency_ms": run["latency_ms"],
+            "turn_ms": run["turn_ms"],
+            "cost_eur": run["cost_eur"],
+            "model_calls": run["model_calls"],
+            "tool_calls": run["tool_calls"],
+            "cache_hits": run["cache_hits"],
+            "trips": run["trips"],
+            "answers": run["answers"],
+            "trace": run["trace"],
+        }

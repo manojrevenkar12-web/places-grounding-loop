@@ -25,10 +25,15 @@ def train() -> dict:
     y = np.asarray([links[a] == links[b] for a, b in pairs])
     clf = LogisticRegression(max_iter=2000, C=1.0).fit(x, y)
     p = clf.predict_proba(x)[:, 1] >= s.pipeline.match_threshold
-    out = {"features": NAMES, "coef": clf.coef_[0].round(5).tolist(), "intercept": round(float(clf.intercept_[0]), 5),
-           "training_pairs": len(pairs), "positives": int(y.sum()),
-           "train_precision": round(float((p & y).sum() / max(1, p.sum())), 4),
-           "train_recall": round(float((p & y).sum() / max(1, y.sum())), 4)}
+    out = {
+        "features": NAMES,
+        "coef": clf.coef_[0].round(5).tolist(),
+        "intercept": round(float(clf.intercept_[0]), 5),
+        "training_pairs": len(pairs),
+        "positives": int(y.sum()),
+        "train_precision": round(float((p & y).sum() / max(1, p.sum())), 4),
+        "train_recall": round(float((p & y).sum() / max(1, y.sum())), 4),
+    }
     MODEL.parent.mkdir(exist_ok=True)
     MODEL.write_text(json.dumps(out, indent=1) + "\n")
     return out

@@ -49,8 +49,9 @@ class PlacesService:
     def _failed_shard(self) -> int | None:
         return self.rng.randrange(SHARDS) if self.rng.random() < self.s.tools.search_failure else None
 
-    def search_forward(self, query: str, near_lat: float | None = None, near_lon: float | None = None,
-                       limit: int = 5) -> dict:
+    def search_forward(
+        self, query: str, near_lat: float | None = None, near_lon: float | None = None, limit: int = 5
+    ) -> dict:
         lost = self._failed_shard()
         q = query.lower()
         out = []
@@ -61,21 +62,42 @@ class PlacesService:
         for pid, p in self.rel.places.items():
             if p["status"] != "open" or shard(pid) == lost:
                 continue
-            sim = max(similarity(p["name"], query), similarity(f"{p['name']} {p['street']}", query),
-                      similarity(f"{p['name']} {p['street']} {p['housenumber']}", query))
+            sim = max(
+                similarity(p["name"], query),
+                similarity(f"{p['name']} {p['street']}", query),
+                similarity(f"{p['name']} {p['street']} {p['housenumber']}", query),
+            )
             if sim < 0.35:
                 continue
             bonus = 0.0
             if near_lat is not None:
                 bonus += 0.2 / (1 + haversine_m(near_lat, near_lon, p["lat"], p["lon"]) / 1000)
-            out.append({"kind": "place", "place_id": pid, "name": p["name"], "category": p["category"],
-                        "street": p["street"], "housenumber": p["housenumber"], "lat": p["lat"], "lon": p["lon"],
-                        "score": round(sim + bonus, 4)})
+            out.append(
+                {
+                    "kind": "place",
+                    "place_id": pid,
+                    "name": p["name"],
+                    "category": p["category"],
+                    "street": p["street"],
+                    "housenumber": p["housenumber"],
+                    "lat": p["lat"],
+                    "lon": p["lon"],
+                    "score": round(sim + bonus, 4),
+                }
+            )
         out.sort(key=lambda r: -r["score"])
         return {"results": out[:limit], "complete": lost is None, "data_version": self.rel.version}
 
-    def category_search(self, category: str, lat: float, lon: float, radius_m: float, day: int | None = None,
-                        hour: float | None = None, limit: int = 5) -> dict:
+    def category_search(
+        self,
+        category: str,
+        lat: float,
+        lon: float,
+        radius_m: float,
+        day: int | None = None,
+        hour: float | None = None,
+        limit: int = 5,
+    ) -> dict:
         lost = self._failed_shard()
         out = []
         for pid, p in self.rel.places.items():
@@ -87,8 +109,16 @@ class PlacesService:
             o = open_at(p, day, hour) if day is not None else None
             if day is not None and o is False:
                 continue
-            out.append({"place_id": pid, "name": p["name"], "lat": p["lat"], "lon": p["lon"],
-                        "distance_m": round(d, 1), "open_now": o})
+            out.append(
+                {
+                    "place_id": pid,
+                    "name": p["name"],
+                    "lat": p["lat"],
+                    "lon": p["lon"],
+                    "distance_m": round(d, 1),
+                    "open_now": o,
+                }
+            )
         out.sort(key=lambda r: (r["open_now"] is None, r["distance_m"]))
         return {"results": out[:limit], "complete": lost is None, "data_version": self.rel.version}
 
@@ -96,9 +126,13 @@ class PlacesService:
         p = self.rel.places.get(place_id)
         if p is None:
             raise ToolError(f"no place {place_id}")
-        return {"place_id": place_id, **{k: p[k] for k in ("name", "category", "lat", "lon", "street", "housenumber",
-                                                             "hours", "phone", "status")},
-                "data_version": self.rel.version}
+        return {
+            "place_id": place_id,
+            **{
+                k: p[k] for k in ("name", "category", "lat", "lon", "street", "housenumber", "hours", "phone", "status")
+            },
+            "data_version": self.rel.version,
+        }
 
     def status(self) -> dict:
         return {"data_version": self.rel.version}
@@ -111,16 +145,37 @@ class PlacesService:
 
 
 def server(svc: PlacesService) -> MCPServer:
-    srv = MCPServer("places", instructions="Search places, categories, details and routes. Results carry the data "
-                    "version and say when they are partial.", log_level="CRITICAL")
-    srv.tool(description="Search places and landmarks by name or address, optionally near a point.",
-             annotations=READ)(svc.search_forward)
-    srv.tool(description="Places of a category within a radius, optionally open at a day (0=Mon) and hour.",
-             annotations=READ)(svc.category_search)
-    srv.tool(description="Full details of a place: hours, phone, status, data version.",
-             annotations=READ)(svc.place_details)
-    srv.tool(description="The current data version, to tell whether facts read earlier are still current.",
-             annotations=READ)(svc.status)
-    srv.tool(description="Walking or driving distance and duration between two points.",
-             annotations=READ)(svc.route)
+    srv = MCPServer(
+        "places",
+        instructions="Search places, categories, details and routes. Results carry the data "
+        "version and say when they are partial.",
+        log_level="CRITICAL",
+    )
+    srv.tool(description="Search places and landmarks by name or address, optionally near a point.", annotations=READ)(
+        svc.search_forward
+    )
+    srv.tool(
+        description="Places of a category within a radius, optionally open at a day (0=Mon) and hour.", annotations=READ
+    )(svc.category_search)
+    srv.tool(description="Full details of a place: hours, phone, status, data version.", annotations=READ)(
+        svc.place_details
+    )
+    srv.tool(
+        description="The current data version, to tell whether facts read earlier are still current.", annotations=READ
+    )(svc.status)
+    srv.tool(description="Walking or driving distance and duration between two points.", annotations=READ)(svc.route)
     return srv
+
+
+def main() -> None:
+    """Serves release 2 over stdio, for an MCP client such as Claude Desktop or an agent framework."""
+    from pgl.pipeline.release import build
+    from pgl.settings import load
+
+    s = load()
+    rel = build(2, s, build(1, s))
+    server(PlacesService(rel, s)).run()
+
+
+if __name__ == "__main__":
+    main()

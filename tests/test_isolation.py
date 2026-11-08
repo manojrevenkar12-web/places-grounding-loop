@@ -33,6 +33,7 @@ def test_the_held_out_data_is_what_was_pinned():
 
 def test_the_production_log_carries_no_truth(tmp_path):
     from pgl.evals.feedback import LOG
+
     if LOG.exists():
         text = LOG.read_text()
         assert "accept_pids" not in text and "eta_min" not in text and '"outcome"' not in text
