@@ -48,6 +48,10 @@ max_distance_m = 250
 match_threshold = 0.5        # match probability above which two records are the same place
 closure_corroboration = 2    # independent signals needed to close a place
 coord_prefer_community_m = 60
+max_id_loss_share = 0.15     # a release that drops more of the previous release's ids than this is blocked
+inherit_radius_m = 60        # a place with no shared source key inherits a previous id within this distance
+inherit_min_similarity = 0.6
+naive_match_m = 50           # the baseline: same normalised name within this distance
 
 [model]
 latency_ms = 700
@@ -59,15 +63,23 @@ small_latency_ms = 240
 small_ms_per_1k_in = 60
 small_price_in = 0.0002
 small_price_out = 0.0006
+tokens_per_s = 70            # answer generation; a streamed answer shows from its first token
+small_tokens_per_s = 160
 hallucinate_argument = 0.08   # invents coordinates or a place id instead of using a tool's
 reuse_stale = 0.6             # answers a follow-up from details fetched earlier
 ignore_partial = 0.7          # reports a partial result as complete
 repeat_on_empty = 0.5         # repeats the same search when it finds nothing
+guess_when_ambiguous = 0.6    # picks the first of several equally good matches instead of asking which
 small_extra_error = 0.04      # added to each rate on the small model
 
 [harness]
-max_steps = 8
+max_steps = 8                 # the guarded harnesses' step budget per turn
+plain_max_steps = 30          # the plain loop has only a safety stop, which is what "unbounded" looks like in production
+start_radius_m = 1000
 widen_radius_factor = 2.0
+max_radius_m = 8000          # a plan widens an empty search up to this radius without asking the model again
+partial_retries = 2           # a partial search result is retried this often before the model sees it
+route_small = ["eta", "phone"]  # request types the router sends to the small model
 
 [tools]
 latency_ms = 90
@@ -89,6 +101,19 @@ p95_latency_ms = 4000
 cost_per_request_eur = 0.01
 
 [eval]
+eta_tolerance = 0.10          # an ETA within 10% of the true walking time is right
+follow_up_change_share = 0.7  # follow-ups where the found place closes or its hours change between the turns
+user_report_wrong = 0.6       # production: a user reports a wrong answer this often
+user_report_right = 0.03      # and reports a right one by mistake this often
 bootstrap = 2000
 alpha = 0.05
+budget_slack = 0.05   # a change over budget may not be more than this much worse than the current harness
 gate_max_drop = 0.02   # a change may not lower task success by more than this, by the lower bound of the paired difference
+
+[feedback]
+production_days = 3     # passes of the development tasks run as production traffic by the first harness
+production_harness = "plain"
+
+[gate]
+current = "plan_fetch"    # the harness in production
+candidate = "plan_fetch"  # the harness a change proposes; CI gates it against the current one

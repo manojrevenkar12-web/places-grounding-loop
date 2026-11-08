@@ -1,0 +1,34 @@
+{"case": "REG-001", "task": "DEV-016", "seed_repeat": 100, "modes": ["invented_argument"], "found_in": "DEV-016@100"}
+{"case": "REG-002", "task": "DEV-018", "seed_repeat": 100, "modes": ["stale_context"], "found_in": "DEV-018@100"}
+{"case": "REG-003", "task": "DEV-019", "seed_repeat": 100, "modes": ["data"], "found_in": "DEV-019@100"}
+{"case": "REG-004", "task": "DEV-020", "seed_repeat": 100, "modes": ["invented_argument", "silent_partial"], "found_in": "DEV-020@100"}
+{"case": "REG-005", "task": "DEV-036", "seed_repeat": 100, "modes": ["invented_argument"], "found_in": "DEV-036@100"}
+{"case": "REG-006", "task": "DEV-039", "seed_repeat": 100, "modes": ["data"], "found_in": "DEV-039@100"}
+{"case": "REG-007", "task": "DEV-061", "seed_repeat": 100, "modes": ["invented_argument"], "found_in": "DEV-061@100"}
+{"case": "REG-008", "task": "DEV-062", "seed_repeat": 100, "modes": ["guessed_between_matches"], "found_in": "DEV-062@100"}
+{"case": "REG-009", "task": "DEV-064", "seed_repeat": 100, "modes": ["data"], "found_in": "DEV-064@100"}
+{"case": "REG-010", "task": "DEV-069", "seed_repeat": 100, "modes": ["invented_argument"], "found_in": "DEV-069@100"}
+{"case": "REG-011", "task": "DEV-082", "seed_repeat": 100, "modes": ["guessed_between_matches"], "found_in": "DEV-082@100"}
+{"case": "REG-012", "task": "DEV-089", "seed_repeat": 100, "modes": ["data"], "found_in": "DEV-089@100"}
+{"case": "REG-013", "task": "DEV-017", "seed_repeat": 101, "modes": ["invented_argument"], "found_in": "DEV-017@101"}
+{"case": "REG-014", "task": "DEV-031", "seed_repeat": 101, "modes": ["invented_argument"], "found_in": "DEV-031@101"}
+{"case": "REG-015", "task": "DEV-042", "seed_repeat": 101, "modes": ["guessed_between_matches"], "found_in": "DEV-042@101"}
+{"case": "REG-016", "task": "DEV-059", "seed_repeat": 101, "modes": ["data"], "found_in": "DEV-059@101"}
+{"case": "REG-017", "task": "DEV-063", "seed_repeat": 101, "modes": ["stale_context"], "found_in": "DEV-063@101"}
+{"case": "REG-018", "task": "DEV-067", "seed_repeat": 101, "modes": ["guessed_between_matches"], "found_in": "DEV-067@101"}
+{"case": "REG-019", "task": "DEV-069", "seed_repeat": 101, "modes": ["data"], "found_in": "DEV-069@101"}
+{"case": "REG-020", "task": "DEV-093", "seed_repeat": 101, "modes": ["invented_argument", "stale_context"], "found_in": "DEV-093@101"}
+{"case": "REG-021", "task": "DEV-097", "seed_repeat": 101, "modes": ["guessed_between_matches"], "found_in": "DEV-097@101"}
+{"case": "REG-022", "task": "DEV-003", "seed_repeat": 102, "modes": ["stale_context"], "found_in": "DEV-003@102"}
+{"case": "REG-023", "task": "DEV-005", "seed_repeat": 102, "modes": ["data"], "found_in": "DEV-005@102"}
+{"case": "REG-024", "task": "DEV-008", "seed_repeat": 102, "modes": ["silent_partial", "stale_context"], "found_in": "DEV-008@102"}
+{"case": "REG-025", "task": "DEV-023", "seed_repeat": 102, "modes": ["stale_context"], "found_in": "DEV-023@102"}
+{"case": "REG-026", "task": "DEV-025", "seed_repeat": 102, "modes": ["invented_argument", "unbounded_loop"], "found_in": "DEV-025@102"}
+{"case": "REG-027", "task": "DEV-031", "seed_repeat": 102, "modes": ["invented_argument", "silent_partial"], "found_in": "DEV-031@102"}
+{"case": "REG-028", "task": "DEV-032", "seed_repeat": 102, "modes": ["guessed_between_matches"], "found_in": "DEV-032@102"}
+{"case": "REG-029", "task": "DEV-038", "seed_repeat": 102, "modes": ["invented_argument"], "found_in": "DEV-038@102"}
+{"case": "REG-030", "task": "DEV-048", "seed_repeat": 102, "modes": ["stale_context"], "found_in": "DEV-048@102"}
+{"case": "REG-031", "task": "DEV-055", "seed_repeat": 102, "modes": ["invented_argument"], "found_in": "DEV-055@102"}
+{"case": "REG-032", "task": "DEV-058", "seed_repeat": 102, "modes": ["stale_context"], "found_in": "DEV-058@102"}
+{"case": "REG-033", "task": "DEV-079", "seed_repeat": 102, "modes": ["invented_argument"], "found_in": "DEV-079@102"}
+{"case": "REG-034", "task": "DEV-094", "seed_repeat": 102, "modes": ["data"], "found_in": "DEV-094@102"}

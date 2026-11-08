@@ -1,0 +1,25 @@
+{
+ "features": [
+  "log_distance",
+  "name_similarity",
+  "same_name_key",
+  "same_housenumber",
+  "same_street",
+  "same_phone",
+  "phone_conflict"
+ ],
+ "coef": [
+  -0.22794,
+  3.33014,
+  4.08019,
+  0.63221,
+  0.60385,
+  0.0,
+  0.0
+ ],
+ "intercept": -4.15851,
+ "training_pairs": 681,
+ "positives": 546,
+ "train_precision": 0.9837,
+ "train_recall": 0.9945
+}
